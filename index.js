@@ -16,7 +16,11 @@ app.set("views", viewsPath);
 // setting middlewares
 app.use(bodyParser.urlencoded({ extended: false }));
 
+// importing routes
+const signup = require("./routes/signup");
+
 // handling routes
+app.use("/signup", signup);
 
 // handling home page
 app.get("/", (req, res) => {});
