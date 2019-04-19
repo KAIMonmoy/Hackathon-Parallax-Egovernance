@@ -1,0 +1,68 @@
+doctype html
+html(lang='en', dir='ltr')
+  head
+    meta(charset='utf-8')
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans:400,700', rel='stylesheet')
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.1/css/all.css', integrity='sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf', crossorigin='anonymous')
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.1/css/all.css', integrity='sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf', crossorigin='anonymous')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+    title Beautiful Bangladesh
+    style.
+      .slidecontainer {
+      width: 100%;
+      }
+      .slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 25px;
+      background: #d3d3d3;
+      outline: none;
+      opacity: 0.7;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+      }
+      .slider:hover {
+      opacity: 1;
+      }
+      .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 25px;
+      height: 25px;
+      background: #4CAF50;
+      cursor: pointer;
+      }
+      .slider::-moz-range-thumb {
+      width: 25px;
+      height: 25px;
+      background: #4CAF50;
+      cursor: pointer;
+      }
+  body
+    h1 Place Review And Rating
+    form(action='\user', method='get')
+      select(name='placeReview')
+        option(value='') place
+      .slidecontainer
+        input(type='range', name='placeRating', value='')
+      input(type='textarea', name='placeReview', value='')
+      button(type='submit', name='submitRating') Submit
+    h1 Hotel Review And Rating
+    form(action='\user', method='get')
+      select(name='hotelReview')
+        option(value='') Hotel
+      .slidecontainer
+        input(type='range', name='hotelRating', value='')
+      input(type='textarea', name='hotelReview', value='')
+      button(type='submit', name='submitRating') Submit
+    h1 Agency Review And Rating
+    form(action='\user', method='get')
+      select(name='AgencyReview')
+        option(value='') Agency
+      .slidecontainer
+        input(type='range', name='agencyRating', value='')
+      input(type='textarea', name='agencyReview', value='')
+      button(type='submit', name='submitRating') Submit
