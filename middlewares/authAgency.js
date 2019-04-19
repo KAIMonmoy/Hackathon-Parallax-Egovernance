@@ -10,6 +10,6 @@ module.exports = function authUser(req, res, next) {
     req.user = decodedPayload;
     next();
   } catch (ex) {
-    res.status(400).render("userLogin");
+    res.status(400).render("agencyLogin");
   }
 };

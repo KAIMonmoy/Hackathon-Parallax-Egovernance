@@ -36,7 +36,7 @@ function validateUser(user) {
 function tokenForUser(user) {
   const timestamp = new Date().getTime();
   let token = jwt.sign(
-    { email: user.email, lastLoggedIn: timestamp },
+    { username: user.username, email: user.email, lastLoggedIn: timestamp },
     process.env.JWT_PRIVATE_KEY,
     {
       expiresIn: "24h" // expires in 24 hours
@@ -46,7 +46,11 @@ function tokenForUser(user) {
 }
 
 //end point handling
-router.get("/", (req, res) => {});
+router.get("/", (req, res) => {
+  res.render("userSignup", {
+    failedSignup: false
+  });
+});
 
 // handling signup request
 router.post("/", async (req, res) => {
