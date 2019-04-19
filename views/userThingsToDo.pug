@@ -3,11 +3,80 @@ html(lang='en', dir='ltr')
   head
     meta(charset='utf-8')
     title
-    link(rel='stylesheet', href='thingsToDo.css')
     link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
     link(href='https://fonts.googleapis.com/css?family=Cabin:400,700|Mukta:200|Roboto:300', rel='stylesheet')
     link(href='https://fonts.googleapis.com/css?family=Didact+Gothic', rel='stylesheet', type='text/css')
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans:400,700', rel='stylesheet')
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.1/css/all.css', integrity='sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf', crossorigin='anonymous')
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.1/css/all.css', integrity='sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf', crossorigin='anonymous')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
     style.
+      .center-on-page {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      }
+      h1 {
+      text-align: center;
+      }
+      /* Reset Select */
+      select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      appearance: none;
+      outline: 0;
+      box-shadow: none;
+      border: 0 !important;
+      background: #2c3e50;
+      background-image: none;
+      }
+      /* Custom Select */
+      .select {
+      position: relative;
+      display: block;
+      width: 20em;
+      height: 3em;
+      line-height: 3;
+      background: #2c3e50;
+      overflow: hidden;
+      border-radius: .25em;
+      }
+      select {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0 0 0 .5em;
+      color: #fff;
+      cursor: pointer;
+      }
+      select::-ms-expand {
+      display: none;
+      }
+      /* Arrow */
+      .select::after {
+      content: '\25BC';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0 1em;
+      background: #34495e;
+      pointer-events: none;
+      }
+      /* Transition */
+      .select:hover::after {
+      color: #f39c12;
+      }
+      .select::after {
+      -webkit-transition: .25s all ease;
+      -o-transition: .25s all ease;
+      transition: .25s all ease;
+      }
       @import url(https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700,400italic|Raleway:300);
       * {
       margin: 0;
@@ -219,8 +288,42 @@ html(lang='en', dir='ltr')
       color: blue;
       }
   body
+<<<<<<< HEAD
     .headline 
       h1 #{placename}
+=======
+    br
+    br
+    // <div class="select" style="position:relative;top:23%;left:15%">
+    .container
+      .row.d-flex.justify-content-center
+        .col-md-4
+          .select
+            select(name='place')
+              option(value='Place') Place
+              option(value='Bandarban District') Bandarban District
+              option(value='Rangamati') Rangamati
+              option(value='Khagrachari District') Khagrachari District
+              option(value='Patenga beach') Patenga beach
+              option(value='Foys Lake') Foy's Lake
+              option(value='Heritage Park') Heritage Park
+              option(value='Bichnakandi') Bichnakandi
+              option(value='Jaflong') Jaflong
+              option(value='Madhobpur Lake') Madhobpur Lake
+              option(value='Ratargul Swamp Forest') Ratargul Swamp Forest
+              option(value='Lalbagh Fort') Lalbagh Fort
+              option(value='Ahsan Manzil') Ahsan Manzil
+              option(value='Somapura Mahavihara') Somapura Mahavihara
+              option(value='Mahastangar') Mahastangar
+              option(value='Kantajew Temple') Kantajew Temple
+              option(value='Kuakata Beach') Kuakata Beach
+              option(value='Cox Bazar') Cox's Bazar
+              option(value='St. Martin Island') St. Martin Island
+        .cl-md-4
+          button(type='submit', name='button') Search
+    .headline
+      h1 placeName
+>>>>>>> 0963ed279c32a87c9bb9559adc25cce058b1945e
     //
       <div class="wrap">
       <div class="box box1 shadow1">

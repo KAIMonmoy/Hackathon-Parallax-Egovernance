@@ -26,6 +26,7 @@ const userHotels = require("./routes/userHotels");
 const userRestaurants = require("./routes/userRestaurants");
 const userPlaces = require("./routes/userPlaces");
 const userThingsToDo = require("./routes/userThingsToDo");
+const userPayingGuest = require("./routes/userPayingGuest");
 
 // handling routes
 app.use("/user/login", userLogin);
@@ -36,6 +37,7 @@ app.use("/user/hotels", userHotels);
 app.use("/user/restaurants", userRestaurants);
 app.use("/user/places", userPlaces);
 app.use("/user/thingsToDo", userThingsToDo);
+app.use("/user/payingGuests", userPayingGuest);
 
 // handling home page
 app.get("/", (req, res) => {
