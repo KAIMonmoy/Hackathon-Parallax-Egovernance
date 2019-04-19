@@ -26,18 +26,18 @@ router.post("/", async (req, res) => {
     email: req.body.email,
     password: req.body.password
   };
-  const { error } = validateLogin(loginData);
-  if (error)
-    return res.status(400).render("userLogin", {
-      failedLogin: true
-    });
+  // const { error } = validateLogin(loginData);
+  // if (error)
+  //   return res.status(400).render("userLogin", {
+  //     failedLogin: true
+  //   });
 
   try {
     const sql = `SELECT * FROM "user" WHERE "email" = $1`;
     const param = [loginData.email];
     const client = new Client();
     await client.connect();
-    const loggedInUser = await client.query(sql, param);
+    let loggedInUser = await client.query(sql, param);
     if (loggedInUser.rowCount != 1) {
       return res.status(400).render("userLogin", {
         failedLogin: true
@@ -55,9 +55,18 @@ router.post("/", async (req, res) => {
 
     const token = tokenForUser(loggedInUser);
 
+    const placeSQL = `select place_name,place_lat,place_long,history.place_review,history.place_rating
+    from public.places join public.history
+    on places.place_id = history.place_id join public.user
+    on history.user_id = public.user.user_id
+    and public.user.username = $1`;
+    const placeParam = [loggedInUser.username];
+    const placeData = await client.query(placeSQL, placeParam);
+
     res.header("x-auth-token", token).render("user", {
       username: loggedInUser.username,
-      email: loggedInUser.email
+      email: loggedInUser.email,
+      places: placeData.rows
     });
   } catch (ex) {
     console.error(ex);

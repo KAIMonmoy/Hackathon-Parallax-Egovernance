@@ -151,7 +151,7 @@ html(lang='en', dir='ltr')
                   li.text-center
                     img.img-circle.img-responsive.img-bordered-primary(data-no-retina='', src='http://bootdey.com/img/Content/avatar/avatar1.png', alt='John Doe')
                   li.text-center
-                    h4.text-capitalize John Doe
+                    h4.text-capitalize #{username}
                   li
                     br
                   li
@@ -214,7 +214,7 @@ html(lang='en', dir='ltr')
               i.fas.fa-location-arrow(style='font-size:200px')
               br
               p(style='padding-left:10%')
-                b location   History
+                b Location   History
             .col-md-8
               // new map
               #map(style='width: 100%; height: 400px; background: white ;border:1px solid black')
@@ -250,12 +250,18 @@ html(lang='en', dir='ltr')
                   // show info bubble
                   ui.addBubble(bubble);
                   }, false);
-                  addMarkerToGroup(group, {lat:53.439, lng:-2.221},
-                  '<div><a href=\\'http://www.mcfc.co.uk\' >Manchester City</a>' +
-                  '</div><div >City of Manchester Stadium<br>Capacity: 48,000</div>');
-                  addMarkerToGroup(group, {lat:53.430, lng:-2.961},
-                  '<div ><a href=\\'http://www.liverpoolfc.tv\' >Liverpool</a>' +
-                  '</div><div >Anfield<br>Capacity: 45,362</div>');
+                  //- addMarkerToGroup(group, {lat:22.716690, lng:92.297499},
+                  //- '<div><a href=\'http://www.mcfc.co.uk\' >Manchester City</a>' +
+                  //- '</div><div >City of Manchester Stadium<br>Capacity: 48,000</div>');
+                  //- addMarkerToGroup(group, {lat:53.430, lng:-2.961},
+                  //- '<div ><a href=\'http://www.liverpoolfc.tv\' >Liverpool</a>' +
+                  //- '</div><div >Anfield<br>Capacity: 45,362</div>');
+                  var placesdata = !{JSON.stringify(places).replace(/<\//g, "<\\/")};
+                  for (i=0; i<placesdata.length; i++){
+                    addMarkerToGroup(group, {lat:placesdata[i].place_lat, lng:placesdata[i].place_long},
+                  `<div >${placesdata[i].place_name}</a></div>` +
+                  `<div >${placesdata[i].place_review}<br>${placesdata[i].place_rating}</div>`);
+                  }
                   }
                   /**
                   * Boilerplate map initialization code starts below:
@@ -274,7 +280,7 @@ html(lang='en', dir='ltr')
                   // initialize a map - this map is centered over Europe
                   var map = new H.Map(document.getElementById('map'),
                   defaultLayers.normal.map,{
-                  center: {lat: 53.430, lng: -2.961},
+                  center: {lat: 22.716690, lng: 92.297499},
                   zoom: 7,
                   pixelRatio: pixelRatio
                   });
