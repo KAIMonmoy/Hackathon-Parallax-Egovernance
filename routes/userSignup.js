@@ -1,3 +1,4 @@
+// necessary library files
 const Joi = require("joi");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
@@ -9,9 +10,11 @@ const express = require("express");
 
 const router = express.Router();
 
+// middleware functions
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(express.json());
 
+// util functions
 function validateUser(user) {
   const schema = {
     username: Joi.string()
@@ -42,6 +45,7 @@ function tokenForUser(user) {
   return token;
 }
 
+//end point handling
 router.get("/", (req, res) => {});
 
 // handling signup request
