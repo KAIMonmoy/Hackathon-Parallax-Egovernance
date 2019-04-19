@@ -24,6 +24,7 @@ const agencyLogin = require("./routes/agencyLogin");
 const agencySignup = require("./routes/agencySignup");
 const userHotels = require("./routes/userHotels");
 const userRestaurants = require("./routes/userRestaurants");
+const userPlaces = require("./routes/userPlaces");
 
 // handling routes
 app.use("/user/login", userLogin);
@@ -32,6 +33,7 @@ app.use("/agency/login", agencyLogin);
 app.use("/agency/signup", agencySignup);
 app.use("/user/hotels", userHotels);
 app.use("/user/restaurants", userRestaurants);
+app.use("/user/places", userPlaces);
 
 // handling home page
 app.get("/", (req, res) => {
