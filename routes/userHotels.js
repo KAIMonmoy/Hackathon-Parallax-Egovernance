@@ -30,9 +30,30 @@ router.post("/:username", async (req, res) => {
 
   console.log(req.body);
 
-  res.render("userHotels", {
-    username: username
-  });
+  const sql = `select *
+  from public.hotel
+  where hotel_place_id =
+  (
+    select place_id 
+    from public.places
+    where place_name = '${req.body.place}'
+  )
+  `;
+
+  try {
+    const client = new Client();
+    await client.connect();
+    let hotels = await client.query(sql);
+    hotels = hotels.rows;
+    console.log(hotels);
+    res.render("userHotels", {
+      username: username,
+      hotels: hotels
+    });
+  } catch (ex) {
+    console.error(ex);
+    res.status(500).render("500");
+  }
 });
 
 module.exports = router;

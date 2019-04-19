@@ -160,163 +160,131 @@ html
       background-color: black;
       }
   body
-  form(method="POST", action="/user/hotels/" + username)
-    nav.navbar.navbar-expand-lg.navbar-light.bg-dark(style='background-color: #2c3e50;')
-      a.navbar-brand(href='')
-        img(src='https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/facebook/105/camera_1f4f7.png', style='height:30px;margin-left:60px;', alt='Home')
-        |  Beautiful Bangladesh
-      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
-        span.navbar-toggler-icon
-      #navbarSupportedContent.collapse.navbar-collapse
-        select(style='background-color: grey;')
-          option(value='Bandarban District') Bandarban District
-          option(value='Rangamati') Rangamati
-          option(value='Khagrachari District') Khagrachari District
-          option(value='Patenga beach') Patenga beach
-          option(value='Foys Lake') Foy's Lake
-          option(value='Heritage Park') Heritage Park
-          option(value='Bichnakandi') Bichnakandi
-          option(value='Jaflong') Jaflong
-          option(value='Madhobpur Lake') Madhobpur Lake
-          option(value='Ratargul Swamp Forest') Ratargul Swamp Forest
-          option(value='Lalbagh Fort') Lalbagh Fort
-          option(value='Ahsan Manzil') Ahsan Manzil
-          option(value='Somapura Mahavihara') Somapura Mahavihara
-          option(value='Mahastangar') Mahastangar
-          option(value='Kantajew Temple') Kantajew Temple
-          option(value='Kuakata Beach') Kuakata Beach
-          option(value='Cox Bazar') Cox's Bazar
-          option(value='St. Martin Island') St. Martin Island
-        ul.navbar-nav.navbar-right(style='margin-right: 100px;')
-          li
-            .nav-item.nav-link.nav-icons
-              i.fas.fa-hotel(style='color: white;opacity: 0.6;font-size: 17px')  hotels
-          li
-            .nav-item.nav-link.nav-icons
-              i.fas.fa-bus-alt(style='color:white;opacity: 0.6;font-size: 17px')
-                a(href='/user/transportations')
-                  b(style='color: grey') transportations 
-          li
-            .nav-item.nav-link.nav-icons
-              i.fas.fa-utensils(style='color:white;opacity: 0.6;font-size: 17px')
-                a(href='/user/restaurants')
-                  b(style='color: grey')  restaurants
-          li
-            .nav-item.nav-link.nav-icons
-              i.fas.fa-clipboard-list(style='color:white;opacity: 0.6;font-size: 17px')
-                a(href='/user/thingsToDo')
-                  b(style='color: grey')
-                    | things to do
-          li
-            .nav-item.nav-link.nav-icons
-              i.fas.fa-bed(style='color: white;opacity: 0.6;font-size: 17px')
-                a(href='/user/payingGuest')
-                  b(style='color: grey')  pg
-    br
-    h2(align='center') Hotels to stay in Dhaka
-    nav.navbar.navbar-expand-lg.navbar-light.bg-light(style='border: 10px solid grey;margin-left: 100px;margin-right: 100px')
-      // <a class="navbar-brand" href="#">Navbar</a>
-      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
-        span.navbar-toggler-icon
-      #navbarSupportedContent.collapse.navbar-collapse
-        ul.navbar-nav.mr-auto
-          li.nav-item.active
-            // added here
-            a.nav-link(href='#')
-              i.fas.fa-calendar-alt check-in date
-              input(type='date')
-              span.sr-only (current)
-            // finished
-          li.nav-item.active
-            // added here
-            a.nav-link(href='#')
-              i.fas.fa-calendar-alt check-out date
-              input(type='date')
-            // finished
-          li.nav-item.active.dropdown
-            // added here
-            a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
-              i.fas.fa-user Guests :
-              #roombox
-                | 2 rooms, 2 adults, 3 children
-            .dropdown-menu(aria-labelledby='navbarDropdown', style='background-color:grey')
-              a.dropdown-item(href='#')
-                | Rooms: 
-                input#roomboxRoomNumber(type='number', name='numberOfRooms')
+    form(method='POST', action='/user/hotels/' + username)
+      nav.navbar.navbar-expand-lg.navbar-light.bg-dark(style='background-color: #2c3e50;')
+        a.navbar-brand(href='')
+          img(src='https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/facebook/105/camera_1f4f7.png', style='height:30px;margin-left:60px;', alt='Home')
+          |  Beautiful Bangladesh
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+          ul.navbar-nav.navbar-right(style='margin-right: 100px;')
+            li
+              .nav-item.nav-link.nav-icons
+                i.fas.fa-hotel(style='color: white;opacity: 0.6;font-size: 17px;')  hotels
+            li
+              .nav-item.nav-link.nav-icons
+                i.fas.fa-bus-alt(style='color:white;opacity: 0.6;font-size: 17px;')
+                  a(href='/user/transportations')
+                    b(style='color: grey;') transportations 
+            li
+              .nav-item.nav-link.nav-icons
+                i.fas.fa-utensils(style='color:white;opacity: 0.6;font-size: 17px;')
+                  a(href='/user/restaurants')
+                    b(style='color: grey;')  restaurants
+            li
+              .nav-item.nav-link.nav-icons
+                i.fas.fa-clipboard-list(style='color:white;opacity: 0.6;font-size: 17px;')
+                  a(href='/user/thingsToDo')
+                    b(style='color: grey;') things to do
+            li
+              .nav-item.nav-link.nav-icons
+                i.fas.fa-bed(style='color: white;opacity: 0.6;font-size: 17px;')
+                  a(href='/user/payingGuest')
+                    b(style='color: grey;')  pg
+      br
+      h2(align='center') Hotels to stay in Dhaka
+      nav.navbar.navbar-expand-lg.navbar-light.bg-light(style='border: 10px solid grey;margin-left: 100px;margin-right: 100px; margin-top:50px')
+        // <a class="navbar-brand" href="#">Navbar</a>
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+          select(name="place", style='background-color: grey;')
+            option(value='Bandarban District') Bandarban District
+            option(value='Rangamati') Rangamati
+            option(value='Khagrachari District') Khagrachari District
+            option(value='Patenga beach') Patenga beach
+            option(value='Foys Lake') Foy's Lake
+            option(value='Heritage Park') Heritage Park
+            option(value='Bichnakandi') Bichnakandi
+            option(value='Jaflong') Jaflong
+            option(value='Madhobpur Lake') Madhobpur Lake
+            option(value='Ratargul Swamp Forest') Ratargul Swamp Forest
+            option(value='Lalbagh Fort') Lalbagh Fort
+            option(value='Ahsan Manzil') Ahsan Manzil
+            option(value='Somapura Mahavihara') Somapura Mahavihara
+            option(value='Mahastangar') Mahastangar
+            option(value='Kantajew Temple') Kantajew Temple
+            option(value='Kuakata Beach') Kuakata Beach
+            option(value='Cox Bazar') Cox's Bazar
+            option(value='St. Martin Island') St. Martin Island
+          ul.navbar-nav.mr-auto
+            li.nav-item.active(style='padding-top:17px')
+              // added here
+              a.nav-link(href='#')
+                i.fas.fa-calendar-alt check-in date
+                input(type='date', name='checkIn')
+                span.sr-only (current)
+              // finished
+            li.nav-item.active(style='padding-top:17px')
+              // added here
+              a.nav-link(href='#')
+                i.fas.fa-calendar-alt check-out date
+                input(type='date', name='checkOut')
+              // finished
+            li.nav-item.active.dropdown
+              // added here
+              a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                i.fas.fa-user Guests :
+                #roombox 2 rooms, 2 adults, 3 children
+              .dropdown-menu(aria-labelledby='navbarDropdown', style='background-color:grey; padding-top:17px')
+                a.dropdown-item(href='#')
+                  | Rooms:
+                  input#roomboxRoomNumber(type='number', name='numberOfRooms')
+                  br
+                a.dropdown-item(href='#')
+                  | Adults:
+                  input#roomboxAdultNumber(type='number', name='numberOfAdults')
+                  br
+                .dropdown-divider
+                a.dropdown-item(href='#')
+                  | Children:
+                  input#roomboxChildrenNumber(type='number', name='numberOfChildren')
+                button(type='submit', value='update', onclick='updateInfo()')
+                  b(style='font-size: 15px;font-family: verdana;') update
                 br
-              a.dropdown-item(href='#')
-                | Adults: 
-                input#roomboxAdultNumber(type='number', name='numberOfAdults')
-                br
-              .dropdown-divider
-              a.dropdown-item(href='#')
-                | Children: 
-                input#roomboxChildrenNumber(type='number', name='numberOfChildren')
-              button(type='submit', value='update', onclick='updateInfo()')
-                b(style='font-size: 15px;font-family: verdana;') update
+                script(type='text/javascript').
+                  function updateInfo() {
+                  console.log("heloo koi updateInfo");
+                  var r = document.getElementById("roomboxRoomNumber").value;
+                  var a = document.getElementById("roomboxAdultNumber").value;
+                  var c = document.getElementById("roomboxChildrenNumber").value;
+                  if (r <= 0) r = 2;
+                  if (a <= 0) a = 2;
+                  if (c <= 0) c = 3;
+                  document.getElementById("roombox").innerHTML = r + " rooms, " + a + " adults, " + c + " children";
+                  }
+              // finished here
+        button(type='submit', value='update', onclick='showHotels()', style='margin-top: 20px;margin-left: 380px;') Submit
+        
+      if hotels
+        each hotel in hotels
+          .jumbotron(style='background-color:#fff;border: 10px solid grey;height: 300px;width:500px; margin-left: 150px;margin-right: 150px;')
+            b(style='font-size: 20px;') #{hotel.hotel_name}
+            p
+              | Email : #{hotel.hotel_email}
               br
-              script(type='text/javascript').
-                function updateInfo(){
-                console.log("heloo koi updateInfo");
-                var r = document.getElementById("roomboxRoomNumber").value;
-                var a = document.getElementById("roomboxAdultNumber").value;
-                var c = document.getElementById("roomboxChildrenNumber").value;
-                if(r <= 0 ) r = 2;
-                if(a <= 0 ) a = 2;
-                if(c <= 0 ) c = 3;
-                document.getElementById("roombox").innerHTML = r+" rooms, "+a+" adults, "+c+" children";
-                }
-            // finished here
-    button(type='submit', value='update', onclick='showHotels()', style='margin-top: 20px;margin-left: 380px;')
-      | Submit
-    script(type='text/javascript').
-      function showHotels(){
-      // var l = document.getElementById("loadBox");
-      // l.style.opacity = 1;
-      var b = document.getElementById("listsOfHotels");
-      b.style.opacity = 1;
-      }
-    #loadBox.box(style='background-color: grey; height: 40px;width: 200px;margin-left: 600px;opacity: 0')
-      .loader4(style='background-color: black;')
-      // <p>loader 4</p>
-    br
-    br
-    // </form>
-    #listsOfHotels(style='opacity:0;')
-      .jumbotron(style='background-color:#fff;border: 10px solid grey;height: 300px;width:500px;\
-      margin-left: 150px;margin-right: 150px;')
-        b(style='font-size: 20px;') Hotel Name
-        p
-          | Email : jdfs
-          br
-          |                         Phone : 895893
-          br
-          |                         Rating : 5345
-          br
-          |                         Number of Reviews :
-          br
-          |                         Price : 26 
-          br
-        form(method='POST', action='/user/hotels')
-          button.btn.btn-primary(type='submit', style='align-items: bottom;color: grey;')  Book
-          button.btn.btn-primary(type='submit', style='align-items: bottom;color: grey;')  Reviews
-      .jumbotron(style='background-color:#fff;border: 10px solid grey;height: 300px;width:500px;\
-      margin-left: 150px;margin-right: 150px;')
-        b(style='font-size: 20px;') Hotel Name
-        p
-          | Email : jdfs
-          br
-          |                         Phone : 895893
-          br
-          |                         Rating : 5345
-          br
-          |                         Number of Reviews :
-          br
-          |                         Price : 26 
-          br
-        form(method='POST', action='/user/hotels')
-          button.btn.btn-primary(type='submit', style='align-items: bottom;color: grey;')  Book
-          button.btn.btn-primary(type='submit', style='align-items: bottom;color: grey;')  Reviews
+              |  Phone : #{hotel.hotel_phn}
+              br
+              |  Rating : #{hotel.hotel_rating}
+              br
+              |  Number of Reviews : #{hotel.hotel_reviewNumber}
+              br
+              |  Price : #{hotel.hotel_perRoomCost} 
+              br
+            //- button.btn.btn-primary(type='submit', style='align-items: bottom;color: grey;')  Book
+            //- button.btn.btn-primary(type='submit', style='align-items: bottom;color: grey;')  Reviews
+      
     // Add to your stylesheet
     script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1', crossorigin='anonymous')
