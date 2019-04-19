@@ -5,41 +5,78 @@ html(lang='en')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     meta(http-equiv='X-UA-Compatible', content='ie=edge')
     link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.1/css/all.css', integrity='sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf', crossorigin='anonymous')
-    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
     title Beautiful Bangladesh
     style.
-      body{
-      background-image: url("https://steemitimages.com/DQmPWSqTRYk1RGNmJTSXUCuvTRYKbHhxtSX53PNMGcwbHFi/image.png");
+      body {
+      background-image: url("https://png.pngtree.com/thumb_back/fw800/back_pic/05/06/82/24597067863c92a.jpg");
       background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
       }
-      .pick #cls{
+      .pick #cls {
       display: flex;
       flex-flow: column wrap;
       justify-content: center;
       }
+      h1 {
+      position: absolute;
+      top: 8%;
+      left:25%;
+      border: 10px;
+      color: #FFFFFF;
+      font-size: 80px;
+      font-family: cursive;
+      }
+      .card {
+      /* Add shadows to create the "card" effect */
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+      transition: 0.9s;
+      }
+      /* On mouse-over, add a deeper shadow */
+      .card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+      }
+      /* Add some padding inside the card container */
+      .container {
+      padding: 2px 16px;
+      }
+      h4 {
+      position: relative;
+      color:#0077be;
+      font-size: 25px;
+      font-family: cursive;
+      left: 30%
+      }
   body
-    nav.navbar.fixed-top.navbar-expand-sm.navbar-light(style='background-color: #2c3e50;height: 50px;')
+    h1 Beautiful Bangladesh
+    .card(style='\
+    position:absolute;\
+    top:50%;\
+    left: 30%;\
+    height: 200px;\
+    width:200px;\
+    ')
+      a(href='/user/login')
+        img(src='https://www.svgrepo.com/show/3319/tourist.svg', alt='Avatar', style='width:100%')
       .container
-        a.navbar-brand(href='')
-          img(src='https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/facebook/105/camera_1f4f7.png', style='height:30px;', alt='Home')
-          span(style='color: white')   Beautiful Bangladesh
-        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
-          span.navbar-toggler-icon
-    .row.pick
-      div(style='margin-left:550px;margin-top: 300px')
-        .col
-          form(method='GET', action='/user/login')
-            button(type='submit', style='margin:10px;border:5px solid grey;height: 45px;width: 300px;align-content: center;cursor:pointer;color: grey')
-              i.fas.fa-users(style='color:black;font-size: 30px;') Users
-        .col
-          form(method='GET', action='/agency/login')
-            button(type='submit', style='margin:10px;border:5px solid grey;height: 45px;width: 300px;align-content: center;cursor:pointer;color: grey')
-              i.fas.fa-handshake(style='color:black;font-size:30px;') Agencies
-    // Add to your stylesheet
-    script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1', crossorigin='anonymous')
-    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM', crossorigin='anonymous')
-    
+        h4
+          b
+            | USER
+            br
+            | PORTAL
+    .card(style='\
+    position:absolute;\
+    top:50%;\
+    left: 58%;\
+    height: 200px;\
+    width:200px;\
+    ')
+      a(href='/agency/login')
+        img(src='https://www.svgrepo.com/show/69059/agency-connection.svg', alt='Avatar', href='/user/login', style='width:100%')
+      .container
+        h4
+          b
+            | AGENCY
+            br
+            | PORTAL

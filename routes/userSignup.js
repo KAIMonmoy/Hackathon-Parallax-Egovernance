@@ -99,10 +99,12 @@ router.post("/", async (req, res) => {
     const insertedUser = await client.query(insertionSQL, params);
     console.log(insertedUser.rowCount, insertedUser.rows);
     const token = tokenForUser(newUser);
-    res.header("x-auth-token", token).send(newUser); //update render() with correct file
+    res.header("x-auth-token", token).send("user", {
+      user: newUser
+    });
   } catch (err) {
     console.error(err);
-    res.status(500).send("somossha ase"); //send appropriate files
+    res.status(500).send("500"); //send appropriate files
   }
 });
 
