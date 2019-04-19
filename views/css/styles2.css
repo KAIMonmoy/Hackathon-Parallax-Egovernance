@@ -1,0 +1,68 @@
+body{
+	background-image: url(https://metaphysicsspeaks.com/wp-content/uploads/2018/02/587256952-soothing-background.jpg);
+	background-size: cover;
+}
+
+h2{
+	text-align: center;
+}
+
+p{
+	text-align: center;
+}
+
+img{
+	float: center;
+}
+
+footer{
+	clear: both;
+	text-align : center;
+}
+
+.container{
+	width: 100%;
+	height: 300px;
+	background: rgba(0,0,0,0);
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: flex-start;
+	align-content: space-between;
+	cursor: pointer;
+
+}
+
+.item:last-child{
+	color: blue;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: flex-end;
+	align-content: space-between;
+}
+
+/*checked the order of specificity of the selectors*/
+h2 p:hover{
+	color: red;
+	text-align: center;
+	cursor: pointer;
+}
+
+.box{
+	border: 3px solid grey;
+	display: inline-block;
+	padding: 5px 20px;
+	margin: 10px 20px;
+	width: 80px;
+	height: 70px;
+}
+
+p{
+	font-size: 20px;
+}
+
+span{
+	font-size: 2rem;	
+}

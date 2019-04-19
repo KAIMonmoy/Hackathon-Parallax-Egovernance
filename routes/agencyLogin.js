@@ -16,7 +16,7 @@ router.use(express.json());
 
 // handling endpoints
 router.get("/", (req, res) => {
-  res.render("userLogin", {
+  res.render("agencyLogin", {
     failedLogin: false
   });
 });
@@ -28,36 +28,36 @@ router.post("/", async (req, res) => {
   };
   const { error } = validateLogin(loginData);
   if (error)
-    return res.status(400).render("userLogin", {
+    return res.status(400).render("agencyLogin", {
       failedLogin: true
     });
 
   try {
-    const sql = `SELECT * FROM "user" WHERE "email" = $1`;
+    const sql = `SELECT * FROM "agency" WHERE "email" = $1`;
     const param = [loginData.email];
     const client = new Client();
     await client.connect();
-    const loggedInUser = await client.query(sql, param);
-    if (loggedInUser.rowCount != 1) {
-      return res.status(400).render("userLogin", {
+    const loggedInAgency = await client.query(sql, param);
+    if (loggedInAgency.rowCount != 1) {
+      return res.status(400).render("agencyLogin", {
         failedLogin: true
       });
     }
-    loggedInUser = loggedInUser.rows[0];
+    loggedInAgency = loggedInAgency.rows[0];
     const validPassword = await bcrypt.compare(
       loginData.password,
-      loggedInUser.password
+      loggedInAgency.password
     );
     if (!validPassword)
-      return res.status(400).render("userLogin", {
+      return res.status(400).render("agencyLogin", {
         failedLogin: true
       });
 
-    const token = tokenForUser(loggedInUser);
+    const token = tokenForUser(loggedInAgency);
 
     res.header("x-auth-token", token).render("user", {
-      username: loggedInUser.username,
-      email: loggedInUser.email
+      username: loggedInAgency.username,
+      email: loggedInAgency.email
     });
   } catch (ex) {
     console.error(ex);
@@ -82,10 +82,14 @@ function validateLogin(loginData) {
   return Joi.validate(loginData, schema);
 }
 
-function tokenForUser(user) {
+function tokenForUser(agency) {
   const timestamp = new Date().getTime();
   let token = jwt.sign(
-    { username: user.username, email: user.email, lastLoggedIn: timestamp },
+    {
+      username: agency.agencyname,
+      email: agency.email,
+      lastLoggedIn: timestamp
+    },
     process.env.JWT_PRIVATE_KEY,
     {
       expiresIn: "24h" // expires in 24 hours
