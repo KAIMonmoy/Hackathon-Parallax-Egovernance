@@ -1,6 +1,14 @@
 doctype html
 html(lang='en', dir='ltr')
   head
+    // new added
+    // Material Design Lite
+    script(src='https://storage.googleapis.com/code.getmdl.io/1.0.2/material.min.js')
+    link(rel='stylesheet', href='https://storage.googleapis.com/code.getmdl.io/1.0.2/material.blue-orange.min.css')
+    // Material Design icon font
+    link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+    // new added ended
+
     meta(charset='utf-8')
     link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
     link(rel='stylesheet', href='')
@@ -12,6 +20,32 @@ html(lang='en', dir='ltr')
     script(type='text/javascript', src='https://js.api.here.com/v3/3.0/mapsjs-ui.js')
     script(type='text/javascript', src='https://js.api.here.com/v3/3.0/mapsjs-mapevents.js')
     style(media='screen').
+       /*
+      new style added */
+      .demo-card-square.mdl-card {
+      width: 200px;
+      height: 200px;
+      float: left;
+      margin: 1rem;
+      position: relative;
+      }
+      .demo-card-square.mdl-card:hover {
+      box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2);
+      }
+      .demo-card-square > .mdl-card__title {
+      color: #fff;
+      background: #03a9f4;
+      }
+      .demo-card-square > .mdl-card__accent {
+      background: #ff9800;
+      }
+      body {
+      padding: 20px;
+      background: #fafafa;
+      position: relative;
+      }
+      /*  */
+      /* new style ended */
       body{margin-top:20px;
       /* background:#eee; */
       background-image: url("https://i.pinimg.com/originals/4d/ee/65/4dee65d05bdbe09c669afcecc9fd8b20.jpg");
@@ -188,25 +222,66 @@ html(lang='en', dir='ltr')
             // /.cover
             // /.profile-cover
             .divider
+            //
+              new added
             .row
-              .col-md-12
-                .jumbotron(style='background:white')
-                  .row.d-flex.justify-between(style='padding-left:10%')
-                    .col-md-4
-                      a(href='user/hotel', style='color:black')
-                        i.fas.fa-hotel(style='font-size:80px ;')
-                        br
-                        i(style='font-size:30px') hotel
-                    .col-md-4
-                      a(href='user/travel', style='color:black')
-                        i.fas.fa-bus-alt(style='font-size:80px')
-                        br
-                        i(style='font-size:30px') travel
-                    .col-md-4
-                      a(href='user/place', style='color:black')
-                        i.fas.fa-map-marked-alt(style='font-size:80px')
-                        br
-                        i(style='font-size:30px')  place
+              .col-md-4
+                .mdl-card.mdl-shadow--2dp.demo-card-square
+                  .mdl-card__title.mdl-card--expand
+                    h2.mdl-card__title-text(style='padding-left:28%') Hotels
+                  .mdl-card__supporting-text
+                    i.fas.fa-hotel(style='font-size:50px ;padding-left:38%')
+                  .mdl-card__actions.mdl-card--border
+                    a.btn.btn-primary.mdl-button.mdl-button--accent.mdl-js-button.mdl-js-ripple-effect.d-flex.justify-align-center(href='/user/hotels')
+                      b(style='padding-left:23%') Click Here
+              .col-md-4
+                .mdl-card.mdl-shadow--2dp.demo-card-square
+                  .mdl-card__title.mdl-card--expand
+                    h2.mdl-card__title-text(style='padding-left:5%') Transportation
+                  .mdl-card__supporting-text
+                    i.fas.fa-hotel(style='font-size:50px ;padding-left:38%')
+                  .mdl-card__actions.mdl-card--border
+                    a.btn.btn-primary.mdl-button.mdl-button--accent.mdl-js-button.mdl-js-ripple-effect.d-flex.justify-align-center(href='/user/transportation')
+                      b(style='padding-left:23%') Click Here
+              .col-md-4
+                .mdl-card.mdl-shadow--2dp.demo-card-square
+                  .mdl-card__title.mdl-card--expand
+                    h2.mdl-card__title-text(style='padding-left:13%') Restaurants
+                  .mdl-card__supporting-text
+                    i.fas.fa-hotel(style='font-size:50px ;padding-left:38%')
+                  .mdl-card__actions.mdl-card--border
+                    a.btn.btn-primary.mdl-button.mdl-button--accent.mdl-js-button.mdl-js-ripple-effect.d-flex.justify-align-center(href='/user/restaurants')
+                      b(style='padding-left:23%') Click Here
+            .row
+              .col-md-4
+                .mdl-card.mdl-shadow--2dp.demo-card-square
+                  .mdl-card__title.mdl-card--expand
+                    h2.mdl-card__title-text(style='padding-left:08%') Things-To-Do
+                  .mdl-card__supporting-text
+                    i.fas.fa-hotel(style='font-size:50px ;padding-left:38%')
+                  .mdl-card__actions.mdl-card--border
+                    a.btn.btn-primary.mdl-button.mdl-button--accent.mdl-js-button.mdl-js-ripple-effect.d-flex.justify-align-center(href='/user/thingsToDo')
+                      b(style='padding-left:23%') Click Here
+              .col-md-4
+                .mdl-card.mdl-shadow--2dp.demo-card-square
+                  .mdl-card__title.mdl-card--expand
+                    h2.mdl-card__title-text(style='padding-left:20%') Bookings
+                  .mdl-card__supporting-text
+                    i.fas.fa-hotel(style='font-size:50px ;padding-left:38%')
+                  .mdl-card__actions.mdl-card--border
+                    a.btn.btn-primary.mdl-button.mdl-button--accent.mdl-js-button.mdl-js-ripple-effect.d-flex.justify-align-center(href='/user/bookings')
+                      b(style='padding-left:23%') Click Here
+              .col-md-4
+                .mdl-card.mdl-shadow--2dp.demo-card-square
+                  .mdl-card__title.mdl-card--expand
+                    h2.mdl-card__title-text(style='padding-left:10%') Pain Guests
+                  .mdl-card__supporting-text
+                    i.fas.fa-hotel(style='font-size:50px ;padding-left:38%')
+                  .mdl-card__actions.mdl-card--border
+                    a.btn.btn-primary.mdl-button.mdl-button--accent.mdl-js-button.mdl-js-ripple-effect.d-flex.justify-align-center(href='/user/painGuests')
+                      b(style='padding-left:23%') Click Here
+            // new added ended
+            //
       .container
         .jumbotron(style='background: white')
           .row.d-flex.align-items-center
