@@ -22,16 +22,18 @@ const userLogin = require("./routes/userLogin");
 const userSignup = require("./routes/userSignup");
 const agencyLogin = require("./routes/agencyLogin");
 const agencySignup = require("./routes/agencySignup");
+const userHotels = require("./routes/userHotels");
 
 // handling routes
 app.use("/user/login", userLogin);
 app.use("/user/signup", userSignup);
 app.use("/agency/login", agencyLogin);
 app.use("/agency/signup", agencySignup);
+app.use("/user/hotels", userHotels);
 
 // handling home page
 app.get("/", (req, res) => {
-  res.render("index")
+  res.render("index");
 });
 
 // starting server
