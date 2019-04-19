@@ -269,9 +269,9 @@ html(lang='en')
     if locals.restaurants
         each rstr in restaurants
             .gallery
-            .desc
-                p.rName #{rstr.rest_name}
-                p.location #{rstr.rest_location}
-                p.cuisine #{rstr.rest_cuisineType}
-                p.rating #{rstr.rest_rating}
+                .desc
+                    p.rName #{rstr.rest_name}
+                    p.location #{rstr.rest_location}
+                    p.cuisine #{rstr.rest_cuisineType}
+                    p.rating #{rstr.rest_rating}
     
