@@ -1,0 +1,338 @@
+doctype html
+html
+  head
+    title Hotels
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.1/css/all.css', integrity='sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf', crossorigin='anonymous')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+    // <link rel="stylesheet" type="text/css" href="home.css">
+    style.
+      body{
+      background-image: url("https://external-preview.redd.it/rEwFriCkfAtjOb5b-23b4tGGVcuvfaBqamYNJrgxnLM.png?auto=webp&s=f3bf0b5c90e4c5fda12ff2139781c854554fd198");
+      }
+      .nav-icons:hover{
+      transition: all 1s;
+      transform: scale(1.1);
+      opacity: 1;
+      cursor: pointer;
+      }
+      .pick{
+      color:black;
+      }
+      .pick:hover{
+      color: black;
+      }
+      .loader {
+      border: 16px solid #f3f3f3; /* Light grey */
+      border-top: 16px solid #3498db; /* Blue */
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      animation: spin 2s linear infinite;
+      }
+      /*loader style part*/
+      @import url(https://fonts.googleapis.com/css?family=Lato:300);
+      .container{
+      text-align: center;
+      background-color: #e74c3c;
+      overflow: hidden;
+      }
+      .box:nth-child(2n-1){
+      background-color: rgba(0,0,0,0.05);
+      }
+      .box{
+      display: inline-block;
+      height: 200px;
+      width: 33.3%;
+      float:left;
+      position: relative;
+      /*margin:0 -4px -5px -2px;*/
+      transition: all .2s ease;
+      }
+      .box p{
+      color: #777;
+      font-family:  Lato,"Helvetica Neue" ;
+      font-weight: 300;
+      position: absolute;
+      font-size: 20px;
+      width: 100%;
+      height: 25px;
+      text-align: center;
+      bottom: 0px;
+      margin: 0;
+      top:160px;
+      background-color: #fff;
+      opacity: 0;
+      text-transform: uppercase;
+      transition: all .2s ease;
+      }
+      .box:hover p{
+      bottom:0px;
+      top:175px;
+      opacity: 1;
+      transition: all .2s ease;
+      z-index: 2;
+      }
+      /* MEDIA QUERIES */
+      @media (max-width: 700px){
+      .box{
+      width: 50%;
+      }
+      .box:nth-child(2n-1){
+      background-color: inherit;
+      }
+      .box:nth-child(4n),.box:nth-child(4n-3) {
+      background-color: rgba(0,0,0,0.05);
+      }
+      }
+      @media (max-width: 420px){
+      .box{
+      width: 100%;
+      }
+      .box:nth-child(4n),.box:nth-child(4n-3){
+      background-color: inherit;
+      }
+      .box:nth-child(2n-1){
+      background-color:rgba(0,0,0,0.05);
+      }
+      }
+      .loader4{
+      position: relative;
+      width: 150px;
+      height: 20px;
+      top: 45%;
+      top: -webkit-calc(50% - 10px);
+      top: calc(50% - 10px);
+      left: 25%;
+      left: -webkit-calc(50% - 75px);
+      left: calc(50% - 75px);
+      background-color: rgba(255,255,255,0.2);
+      }
+      .loader4:before{
+      content: "";
+      position: absolute;
+      background-color: #fff;
+      top: 0px;
+      left: 0px;
+      height: 20px;
+      width: 0px;
+      z-index: 0;
+      opacity: 1;
+      -webkit-transform-origin:  100% 0%;
+      transform-origin:  100% 0% ;
+      -webkit-animation: loader4 7s ease-in-out infinite;
+      animation: loader4 7s ease-in-out infinite;
+      }
+      .loader4:after{
+      content: "";
+      color: #fff;
+      font-family:  Lato,"Helvetica Neue" ;
+      font-weight: 200;
+      font-size: 16px;
+      position: absolute;
+      width: 100%;
+      height: 20px;
+      line-height: 20px;
+      left: 0;
+      top: 0;
+      }
+      @-webkit-keyframes loader4{
+      0%{width: 0px;}
+      70%{width: 100%; opacity: 1;}
+      90%{opacity: 0; width: 100%;}
+      100%{opacity: 0;width: 0px;}
+      }
+      @keyframes loader4{
+      0%{width: 0px;}
+      70%{width: 100%; opacity: 1;}
+      90%{opacity: 0; width: 100%;}
+      100%{opacity: 0;width: 0px;}
+      }
+      }
+      @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+      }
+      .btn-primary{
+      background-color: #fff;
+      border-color: grey;
+      }
+      .btn-primary:hover{
+      background-color: black;
+      }
+    //
+      <style>
+      ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+      }
+      li {
+      float: left;
+      }
+      li a {
+      display: inline-block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      }
+      li a:hover {
+      background-color: #111;
+      }
+      </style>
+  body
+    form(method='POST', action='/user/hotels')
+      nav.navbar.navbar-expand-lg.navbar-light.bg-dark(style='background-color: #2c3e50;')
+        a.navbar-brand(href='')
+          img(src='https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/facebook/105/camera_1f4f7.png', style='height:30px;margin-left:60px;', alt='Home')
+          |  Beautiful Bangladesh
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+          ul.navbar-nav.mr-auto
+            li.nav-item.active
+              a.nav-link(href='#')
+                // there is a use of form
+                div(style='color:white;')
+                  input.form-control.form-rounded(type='submit', placeholder='Where to', style='border-radius: 1rem;width:120px;text-align:center;background-color:#444;opacity: 0.5;text-decoration-color: white')
+                // there is a use of form
+                span.sr-only (current)
+          ul.navbar-nav.navbar-right(style='margin-right: 100px;')
+            li
+              .nav-item.nav-link.nav-icons
+                i.fas.fa-hotel(style='color: white;opacity: 0.6;font-size: 17px')  hotels
+            li
+              .nav-item.nav-link.nav-icons
+                i.fas.fa-bus-alt(style='color:white;opacity: 0.6;font-size: 17px')  transportations
+            li
+              .nav-item.nav-link.nav-icons
+                i.fas.fa-utensils(style='color:white;opacity: 0.6;font-size: 17px') restaurants
+            li
+              .nav-item.nav-link.nav-icons
+                i.fas.fa-clipboard-list(style='color:white;opacity: 0.6;font-size: 17px')  things to do
+            li
+              .nav-item.nav-link.nav-icons
+                i.fas.fa-bed(style='color: white;opacity: 0.6;font-size: 17px')  pg
+          //
+            <form class="form-inline my-2 my-lg-0"  style="margin-right:60px;">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+      br
+      h2(align='center') Hotels to stay in Dhaka
+      nav.navbar.sticky-top
+        .container.rounded-top.rounded-bottom(style='border:5px solid grey;background-color: white;width: 800px;')
+          .row(style='margin:5px;')
+            .col
+              i.fas.fa-calendar-alt check-in date
+              input(type='date')
+            .col(style='border-left: 5px solid grey')
+              i.fas.fa-calendar-alt check-out date
+              input(type='date')
+            .col(style='border-left: 5px solid grey;color: black;')
+              a#navbarDropdown.nav-link.dropdown-toggle.pick(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                i.fas.fa-user Guests :
+                #roombox
+                  | 2rooms,2adults,3children
+              .dropdown-menu.pick(aria-labelledby='navbarDropdown', style='background-color:grey')
+                a.dropdown-item(href='#')
+                  | Rooms: 
+                  input#roomboxRoomNumber(type='number', name='numberOfRooms')
+                  br
+                a.dropdown-item(href='#')
+                  | Adults: 
+                  input#roomboxAdultNumber(type='number', name='numberOfAdults')
+                  br
+                // <div class="dropdown-divider"></div>
+                a.dropdown-item(href='#')
+                  | Children: 
+                  input#roomboxChildrenNumber(type='number', name='numberOfChildren')
+                button(type='submit', value='update', onclick='updateInfo()')
+                  b(style='font-size: 15px;font-family: verdana;') update
+                br
+                script(type='text/javascript').
+                  function updateInfo(){
+                  console.log("heloo koi updateInfo");
+                  var r = document.getElementById("roomboxRoomNumber").value;
+                  var a = document.getElementById("roomboxAdultNumber").value;
+                  var c = document.getElementById("roomboxChildrenNumber").value;
+                  if(r <= 0 ) r = 2;
+                  if(a <= 0 ) a = 2;
+                  if(c <= 0 ) c = 3;
+                  document.getElementById("roombox").innerHTML = r+"rooms,"+a+"adults,"+c+"children";
+                  }
+        div
+          button(type='submit', value='update', onclick='showAnimation()')
+            | Submit
+          script(type='text/javascript').
+            function showAnimation(){
+            var l = document.getElementById("loadBox");
+            l.style.opacity = 1;
+            var b = document.getElementById("listsOfHotels");
+            b.style.opacity = 1;
+            }
+      #loadBox.box(style='background-color: grey; height: 40px;width: 200px;margin-left: 600px;opacity: 0')
+        .loader4(style='background-color: black;')
+        // <p>loader 4</p>
+      br
+      br
+    #listsOfHotels(style='opacity:0;')
+      .jumbotron(style='background-color:#fff;border: 10px solid grey;height: 300px;width:500px;\
+      margin-left: 150px;margin-right: 150px;')
+        //
+          <div class="row d-flex justify-between" style="padding-left:10%;">
+          <div class="col-md-4">
+          <a href="#" style="color:black"> <i class="fas fa-angle-double-right" style="font-size:100px;"></i></a>
+          </div>
+          <div class="col-md-4">
+        b(style='font-size: 20px;') Hotel Name
+        p
+          | Email : jdfs
+          br
+          |                         Phone : 895893
+          br
+          |                         Rating : 5345
+          br
+          |                         Number of Reviews :
+          br
+          |                         Price : 26 
+          br
+        //
+          </div>
+          <div class="col-md-4">
+          <a href="#" style="color:black"><i class="fas fa-map-marked-alt" style="font-size:100px"></i>place</a>
+          </div>
+        button.btn.btn-primary(type='submit', style='align-items: bottom;color: grey;')  Book
+      .jumbotron(style='background-color:#fff;border: 10px solid grey;height: 300px;width:500px;\
+      margin-left: 150px;margin-right: 150px;')
+        //
+          <div class="row d-flex justify-between" style="padding-left:10%;">
+          <div class="col-md-4">
+          <a href="#" style="color:black"> <i class="fas fa-angle-double-right" style="font-size:100px;"></i></a>
+          </div>
+          <div class="col-md-4">
+        h3 Hotel Name
+        p
+          | Email : jdfs
+          br
+          |                         Phone : 895893
+          br
+          |                         Rating : 5345
+          br
+          |                         Number of Reviews :
+          br
+          |                         Price : 26 
+          br
+        //
+          </div>
+          <div class="col-md-4">
+          <a href="#" style="color:black"><i class="fas fa-map-marked-alt" style="font-size:100px"></i>place</a>
+          </div>
+        form(method='POST', action='/user/booking')
+          button.btn.btn-primary(type='submit', style='align-items: bottom;color: grey;')  Book
+    // Add to your stylesheet
+    script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1', crossorigin='anonymous')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM', crossorigin='anonymous')
