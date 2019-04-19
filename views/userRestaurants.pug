@@ -158,7 +158,8 @@ html(lang='en')
                   b(style='color: grey;')  pg
     br
     form(action='/user/restaurants/' + username, method='POST')
-      select(name='', id='')
+      select(name='place')
+        option(value="Place") Place
         option(value='Bandarban District') Bandarban District
         option(value='Rangamati') Rangamati
         option(value='Khagrachari District') Khagrachari District
@@ -179,25 +180,23 @@ html(lang='en')
         option(value='St. Martin Island') St. Martin Island
       select#cuisine(name='cuisine')
         option(value='Cuisine') Cuisine
-        option(value='Bangla') Bangla
-        option(value='Indian') Indian
-        option(value='Chinese') Chinese
-        option(value='Bangla') Thai
-        option(value='Indian') Mexican
+        option(value='bangla') bangla
+        option(value='indian') indian
+        option(value='chinese') chinese
+        option(value='thai') thai
+        option(value='mexican') mexican
       select#price(name='price')
-        option(value='cheap') Cheap
-        option(value='moderate') Moderate
-        option(value='expensive') Expensive
+        option(value="Price") Price
+        option(value='cheap') cheap
+        option(value='moderate') moderate
+        option(value='expensive') expensive
       button(type='submit') Search
-    .gallery
-      .desc
-        p.rName Rest Name
-        p.location location
-        p.cuisine cuisine
-        p.rating 4.4
-    .gallery
-      .desc
-        p.rName Rest Name
-        p.location location
-        p.cuisine cuisine
-        p.rating 4.4
+    if locals.restaurants
+        each rstr in restaurants
+            .gallery
+            .desc
+                p.rName #{rstr.rest_name}
+                p.location #{rstr.rest_location}
+                p.cuisine #{rstr.rest_cuisineType}
+                p.rating #{rstr.rest_rating}
+    

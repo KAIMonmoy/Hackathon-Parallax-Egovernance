@@ -238,7 +238,7 @@ html
             a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
               i.fas.fa-user Guests :
               #roombox
-                | 2rooms,2adults,3children
+                | 2 rooms, 2 adults, 3 children
             .dropdown-menu(aria-labelledby='navbarDropdown', style='background-color:grey')
               a.dropdown-item(href='#')
                 | Rooms: 
@@ -264,7 +264,7 @@ html
                 if(r <= 0 ) r = 2;
                 if(a <= 0 ) a = 2;
                 if(c <= 0 ) c = 3;
-                document.getElementById("roombox").innerHTML = r+"rooms,"+a+"adults,"+c+"children";
+                document.getElementById("roombox").innerHTML = r+" rooms, "+a+" adults, "+c+" children";
                 }
             // finished here
     button(type='submit', value='update', onclick='showHotels()', style='margin-top: 20px;margin-left: 380px;')
