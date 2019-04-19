@@ -196,7 +196,7 @@ html
               a.nav-link(href='#')
                 // there is a use of form
                 div(style='color:white;')
-                  input.form-control.form-rounded(type='submit', placeholder='Where to', style='border-radius: 1rem;width:120px;text-align:center;background-color:#444;opacity: 0.5;text-decoration-color: white')
+                  input.form-control.form-rounded(type='text', placeholder='Where to', style='border-radius: 1rem;width:120px;text-align:center;background-color:#fff;opacity: 0.5;font-style:white;')
                 // there is a use of form
                 span.sr-only (current)
           ul.navbar-nav.navbar-right(style='margin-right: 100px;')
@@ -205,16 +205,25 @@ html
                 i.fas.fa-hotel(style='color: white;opacity: 0.6;font-size: 17px')  hotels
             li
               .nav-item.nav-link.nav-icons
-                i.fas.fa-bus-alt(style='color:white;opacity: 0.6;font-size: 17px')  transportations
+                i.fas.fa-bus-alt(style='color:white;opacity: 0.6;font-size: 17px')
+                  a(href='/user/transportations')
+                    b(style='color: grey') transportations 
             li
               .nav-item.nav-link.nav-icons
-                i.fas.fa-utensils(style='color:white;opacity: 0.6;font-size: 17px') restaurants
+                i.fas.fa-utensils(style='color:white;opacity: 0.6;font-size: 17px')
+                  a(href='/user/restaurants')
+                    b(style='color: grey')  restaurants
             li
               .nav-item.nav-link.nav-icons
-                i.fas.fa-clipboard-list(style='color:white;opacity: 0.6;font-size: 17px')  things to do
+                i.fas.fa-clipboard-list(style='color:white;opacity: 0.6;font-size: 17px')
+                  a(href='/user/thingsToDo')
+                    b(style='color: grey')
+                      | things to do
             li
               .nav-item.nav-link.nav-icons
-                i.fas.fa-bed(style='color: white;opacity: 0.6;font-size: 17px')  pg
+                i.fas.fa-bed(style='color: white;opacity: 0.6;font-size: 17px')
+                  a(href='/user/payingGuest')
+                    b(style='color: grey')  pg
           //
             <form class="form-inline my-2 my-lg-0"  style="margin-right:60px;">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
