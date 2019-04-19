@@ -255,7 +255,7 @@ html(lang='en')
             each pg in pgs
                 .gallery
                     .desc
-                        p.rName pg.owner_name
-                        p.location pg.house_location
-                        p.cuisine pg.numberofroom
-                        p.rating pg.rating
+                        p.rName #{pg.owner_name}
+                        p.location #{pg.house_location}
+                        p.cuisine Number of rooms: #{pg.numberofroom}
+                        p.rating Ratings: #{pg.rating}

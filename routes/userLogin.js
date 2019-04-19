@@ -55,7 +55,7 @@ router.post("/", async (req, res) => {
 
     const token = tokenForUser(loggedInUser);
 
-    const placeSQL = `select place_name,place_lat,place_long,history.place_review,history.place_rating
+    const placeSQL = `select place_name,place_lat,place_long,history.review,history.rating
     from public.places join public.history
     on places.place_id = history.place_id join public.user
     on history.user_id = public.user.user_id

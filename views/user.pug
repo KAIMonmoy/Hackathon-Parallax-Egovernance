@@ -265,12 +265,12 @@ html(lang='en', dir='ltr')
               .col-md-4
                 .mdl-card.mdl-shadow--2dp.demo-card-square
                   .mdl-card__title.mdl-card--expand
-                    h2.mdl-card__title-text(style='padding-left:2%') Transportations
+                    h2.mdl-card__title-text(style='padding-left:2%') Ratings & Reviews
                   .mdl-card__supporting-text
                     i.fas.fa-hotel(style='font-size:50px ;padding-left:38%')
                   .mdl-card__actions.mdl-card--border
-                    a.btn.btn-primary.mdl-button.mdl-button--accent.mdl-js-button.mdl-js-ripple-effect.d-flex.justify-align-center(href='/user/transportation/'+ username)
-                      b(style='padding-left:5%') Go Somewhere
+                    a.btn.btn-primary.mdl-button.mdl-button--accent.mdl-js-button.mdl-js-ripple-effect.d-flex.justify-align-center(href='/user/ratings/'+ username)
+                      b(style='padding-left:5%') Give Your Opinion
               .col-md-4
                 .mdl-card.mdl-shadow--2dp.demo-card-square
                   .mdl-card__title.mdl-card--expand
@@ -335,7 +335,7 @@ html(lang='en', dir='ltr')
                   for (i=0; i<placesdata.length; i++){
                     addMarkerToGroup(group, {lat:placesdata[i].place_lat, lng:placesdata[i].place_long},
                   `<div >${placesdata[i].place_name}</a></div>` +
-                  `<div >${placesdata[i].place_review}<br>${placesdata[i].place_rating}</div>`);
+                  `<div >${placesdata[i].review}<br>${placesdata[i].rating}</div>`);
                   }
                   }
                   /**

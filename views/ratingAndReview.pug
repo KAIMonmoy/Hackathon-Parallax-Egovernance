@@ -43,7 +43,7 @@ html(lang='en', dir='ltr')
       }
   body
     h1 Place Review And Rating
-    form(action='\user', method='get')
+    form(action='/user', method='get')
       select(name='placeReview')
         option(value='') place
       .slidecontainer
@@ -51,7 +51,7 @@ html(lang='en', dir='ltr')
       input(type='textarea', name='placeReview', value='')
       button(type='submit', name='submitRating') Submit
     h1 Hotel Review And Rating
-    form(action='\user', method='get')
+    form(action='/user', method='get')
       select(name='hotelReview')
         option(value='') Hotel
       .slidecontainer
@@ -59,7 +59,7 @@ html(lang='en', dir='ltr')
       input(type='textarea', name='hotelReview', value='')
       button(type='submit', name='submitRating') Submit
     h1 Agency Review And Rating
-    form(action='\user', method='get')
+    form(action='/user', method='get')
       select(name='AgencyReview')
         option(value='') Agency
       .slidecontainer
