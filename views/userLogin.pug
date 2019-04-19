@@ -1,0 +1,98 @@
+doctype html
+html(lang='en', dir='ltr')
+  head
+    meta(charset='utf-8')
+    title
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+    link(href='https://fonts.googleapis.com/css?family=Cabin:400,700|Mukta:200|Roboto:300', rel='stylesheet')
+    style(media='screen').
+      .bBangladesh{
+      margin-top: 10%;
+      }
+      .sliderlogin{
+      margin-top: 100px;
+      margin-bottom: 200px;
+      }
+      body{
+      /*background-color: #8EE4AF;*/
+      background: radial-gradient(circle, #0077ea, #1f4f96, #1b2949, #000);
+      }
+  body
+    nav.navbar.fixed-top.navbar-expand-sm.navbar-dark(style='background-color: #2c3e50;')
+      .container
+        a.navbar-brand(href='')
+          img(src='https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/facebook/105/camera_1f4f7.png', style='height:30px', alt='Home')
+          | Beautiful Bangladesh
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+          ul.navbar-nav.mr-auto
+            li.nav-item.active
+              a.nav-link(href='#')
+                | About 
+                span.sr-only (current)
+            li.nav-item
+              a.nav-link(href='#') Contact
+          ul.navbar-nav.navbar-right
+            li
+              a.nav-link(href='#loginform')
+                | Login 
+                span.sr-only (current)
+            form(action='/user/signup', method='get')
+              // <li>SignUp <span class="sr-only"></li>
+              li
+                button.btn.btn-primary(type='submit') Sign up
+    .container.bBangladesh
+      .jumbotron
+        h1(style="font-family:'Cabin', sans-serif; font-weight:700 ") Beautiful Bangladesh
+        p.lead(style="font-family:'Roboto', sans-serif; font-weight:300")
+          | Beautiful Bangladesh with lots of gifted natural beauty, is always center of main attraction for tourists.
+        hr.my-3
+        p(style="font-family:'Roboto', sans-serif; font-weight:300")
+          | Bangladesh is a small and beautiful asian country bordered by India and Burma and by the Bay of Bengal to the south. The capital is Dhaka, located in central Bangladesh. Other major cities include Chittagong, Khulna, Rajshahi, Sylhet, Barisal, Bogra, Comilla, Mymensingh and Rangpur. Bangladesh is small in area, but quite rich in heritage with numerous historical and archeological sites. It has the longest natural unbroken sea beach and five World Heritage Sites.
+    .container.sliderlogin
+      .row
+        .col-lg-8.col-sm-8
+          #carouselExampleIndicators.carousel.slide(data-ride='carousel')
+            ol.carousel-indicators
+              li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
+              li(data-target='#carouselExampleIndicators', data-slide-to='1')
+              li(data-target='#carouselExampleIndicators', data-slide-to='2')
+            .carousel-inner.slider
+              .carousel-item.active
+                img.d-block.w-100.rounded(src='https://steemitimages.com/DQmPWSqTRYk1RGNmJTSXUCuvTRYKbHhxtSX53PNMGcwbHFi/image.png', alt='First slide')
+              .carousel-item
+                img.d-block.w-100.rounded(src='https://darshantravels.net/wp-content/uploads/2018/08/BANGLADESH.jpg', alt='Second slide')
+              .carousel-item
+                img.d-block.w-100.rounded(src='http://www.travelindream.com/wp-content/uploads/2016/04/pexels-photo-122107-750x422.jpg', alt='Third slide')
+            a.carousel-control-prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
+              span.carousel-control-prev-icon(aria-hidden='true')
+              span.sr-only Previous
+            a.carousel-control-next(href='#carouselExampleIndicators', role='button', data-slide='next')
+              span.carousel-control-next-icon(aria-hidden='true')
+              span.sr-only Next
+        .col-lg-4.col-sm-4.d-flex.align-items-center
+          .card(style='width: 18rem;')
+            .card-body
+              a(name='loginform')
+                h5.card-title Log In
+              hr.my-2
+              form(action='/user/login', method='post')
+                .form-group
+                  label(for='inputEmail3') Email:
+                  div
+                    input#inputEmail3.form-control(type='email', name='userEmail', placeholder='Email')
+                .form-group
+                  label(for='inputPassword3') Password:
+                  div
+                    input#inputPassword3.form-control(type='password', name='userPassword', placeholder='Password')
+                .form-group.row
+                  .col-sm-10.d-flex.justify-content-between
+                    button.btn.btn-primary(type='submit') Sign in
+
+    script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1', crossorigin='anonymous')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM', crossorigin='anonymous')
+    script. 
+        if failedLogin
+            alert("Credentials Not Found")
