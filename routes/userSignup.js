@@ -54,7 +54,6 @@ router.get("/", (req, res) => {
 
 // handling signup request
 router.post("/", async (req, res) => {
-  console.log(req.body);
   // new user schema for db
   const newUser = {
     username: req.body.username,
@@ -98,13 +97,24 @@ router.post("/", async (req, res) => {
     ];
     const insertedUser = await client.query(insertionSQL, params);
     console.log(insertedUser.rowCount, insertedUser.rows);
+
+    const placeSQL = `select place_name,place_lat,place_long,history.place_review,history.place_rating
+    from public.places join public.history
+    on places.place_id = history.place_id join public.user
+    on history.user_id = public.user.user_id
+    and public.user.username = $1`;
+    const placeParam = [newUser.username];
+    const placeData = await client.query(placeSQL, placeParam);
+
     const token = tokenForUser(newUser);
     res.header("x-auth-token", token).render("user", {
-      user: newUser
+      username: newUser.username,
+      email: newUser.email,
+      places: placeData.rows
     });
   } catch (err) {
     console.error(err);
-    res.status(500).render("500"); //send appropriate files
+    res.status(500).render("500");
   }
 });
 
