@@ -1,0 +1,225 @@
+doctype html
+html
+  head
+    title Updating Event
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.1/css/all.css', integrity='sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf', crossorigin='anonymous')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+    // <link rel="stylesheet" type="text/css" href="home.css">
+    style.
+      body{
+      background-image: url("https://external-preview.redd.it/rEwFriCkfAtjOb5b-23b4tGGVcuvfaBqamYNJrgxnLM.png?auto=webp&s=f3bf0b5c90e4c5fda12ff2139781c854554fd198");
+      }
+      .nav-icons:hover{
+      transition: all 1s;
+      transform: scale(1.1);
+      opacity: 1;
+      cursor: pointer;
+      }
+      #pick{
+      color:black;
+      }
+      #pick:hover{
+      color: black;
+      }
+      .loader {
+      border: 16px solid #f3f3f3; /* Light grey */
+      border-top: 16px solid #3498db; /* Blue */
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      animation: spin 2s linear infinite;
+      }
+      /*loader style part*/
+      @import url(https://fonts.googleapis.com/css?family=Lato:300);
+      .container{
+      text-align: center;
+      background-color: #e74c3c;
+      overflow: hidden;
+      }
+      .box:nth-child(2n-1){
+      background-color: rgba(0,0,0,0.05);
+      }
+      .box{
+      display: inline-block;
+      height: 200px;
+      width: 33.3%;
+      float:left;
+      position: relative;
+      /*margin:0 -4px -5px -2px;*/
+      transition: all .2s ease;
+      }
+      .box p{
+      color: #777;
+      font-family:  Lato,"Helvetica Neue" ;
+      font-weight: 300;
+      position: absolute;
+      font-size: 20px;
+      width: 100%;
+      height: 25px;
+      text-align: center;
+      bottom: 0px;
+      margin: 0;
+      top:160px;
+      background-color: #fff;
+      opacity: 0;
+      text-transform: uppercase;
+      transition: all .2s ease;
+      }
+      .box:hover p{
+      bottom:0px;
+      top:175px;
+      opacity: 1;
+      transition: all .2s ease;
+      z-index: 2;
+      }
+      /* MEDIA QUERIES */
+      @media (max-width: 700px){
+      .box{
+      width: 50%;
+      }
+      .box:nth-child(2n-1){
+      background-color: inherit;
+      }
+      .box:nth-child(4n),.box:nth-child(4n-3) {
+      background-color: rgba(0,0,0,0.05);
+      }
+      }
+      @media (max-width: 420px){
+      .box{
+      width: 100%;
+      }
+      .box:nth-child(4n),.box:nth-child(4n-3){
+      background-color: inherit;
+      }
+      .box:nth-child(2n-1){
+      background-color:rgba(0,0,0,0.05);
+      }
+      }
+      .loader4{
+      position: relative;
+      width: 150px;
+      height: 20px;
+      top: 45%;
+      top: -webkit-calc(50% - 10px);
+      top: calc(50% - 10px);
+      left: 25%;
+      left: -webkit-calc(50% - 75px);
+      left: calc(50% - 75px);
+      background-color: rgba(255,255,255,0.2);
+      }
+      .loader4:before{
+      content: "";
+      position: absolute;
+      background-color: #fff;
+      top: 0px;
+      left: 0px;
+      height: 20px;
+      width: 0px;
+      z-index: 0;
+      opacity: 1;
+      -webkit-transform-origin:  100% 0%;
+      transform-origin:  100% 0% ;
+      -webkit-animation: loader4 7s ease-in-out infinite;
+      animation: loader4 7s ease-in-out infinite;
+      }
+      .loader4:after{
+      content: "";
+      color: #fff;
+      font-family:  Lato,"Helvetica Neue" ;
+      font-weight: 200;
+      font-size: 16px;
+      position: absolute;
+      width: 100%;
+      height: 20px;
+      line-height: 20px;
+      left: 0;
+      top: 0;
+      }
+      @-webkit-keyframes loader4{
+      0%{width: 0px;}
+      70%{width: 100%; opacity: 1;}
+      90%{opacity: 0; width: 100%;}
+      100%{opacity: 0;width: 0px;}
+      }
+      @keyframes loader4{
+      0%{width: 0px;}
+      70%{width: 100%; opacity: 1;}
+      90%{opacity: 0; width: 100%;}
+      100%{opacity: 0;width: 0px;}
+      }
+      }
+      @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+      }
+      .btn-primary{
+      background-color: #fff;
+      border-color: grey;
+      }
+      .btn-primary:hover{
+      background-color: black;
+      }
+  body
+    // <form method="GET" action="/user/hotels">
+    nav.navbar.navbar-expand-lg.navbar-light.bg-dark(style='background-color: #2c3e50;')
+      a.navbar-brand(href='')
+        img(src='https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/facebook/105/camera_1f4f7.png', style='height:30px;margin-left:60px;', alt='Home')
+        |  Beautiful Bangladesh
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+    h2(align='left', style='margin-top: 20px;margin-left:30px;') Create An Event
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light(style='border: 10px solid grey;margin-left: 30px;margin-right: 30px;\
+    margin-top: 20px')
+      // <a class="navbar-brand" href="#">Navbar</a>
+      #navbarSupportedContent.collapse.navbar-collapse(style='height: 60px;')
+        ul.navbar-nav.mr-auto
+          li.nav-item.active.dropdown
+            // added here
+            | Event Name : 
+            input#eventNameId(type='text', name='eventName', style='margin-right: 10px;')
+            // finished here
+          li.nav-item.active
+            // added here
+            | Place : 
+            select#eventPlaceId(style='background-color: grey;margin-right: 20px;', name='source')
+              option(value='Bandarban District') Bandarban District
+              option(value='Rangamati') Rangamati
+              option(value='Khagrachari District') Khagrachari District
+              option(value='Patenga beach') Patenga beach
+              option(value='Foys Lake') Foy's Lake
+              option(value='Heritage Park') Heritage Park
+              option(value='Bichnakandi') Bichnakandi
+              option(value='Jaflong') Jaflong
+              option(value='Madhobpur Lake') Madhobpur Lake
+              option(value='Ratargul Swamp Forest') Ratargul Swamp Forest
+              option(value='Lalbagh Fort') Lalbagh Fort
+              option(value='Ahsan Manzil') Ahsan Manzil
+              option(value='Somapura Mahavihara') Somapura Mahavihara
+              option(value='Mahastangar') Mahastangar
+              option(value='Kantajew Temple') Kantajew Temple
+              option(value='Kuakata Beach') Kuakata Beach
+              option(value='Cox Bazar') Cox's Bazar
+              option(value='St. Martin Island') St. Martin Island
+            // finished
+          li.nav-item.active.dropdown
+            // added here
+            | Starting On : 
+            input#eventStartId(type='date', name='start')
+            // finished here
+          li.nav-item.active.dropdown
+            // added here
+            | Finishing On : 
+            input#eventFinishId(type='date', name='finish')
+            // finished here
+    form(method='GET', action='/agency/events', style='margin-left: 50px;')
+      button#updateButtonId.btn.btn-primary-white(type='submit', value='Update', style='margin-top: 20px;\
+      border: 2px solid grey;', name='updateButton')
+        | Update
+    form(method='GET', action='/agency/events', style='margin-left: 50px;')
+      button#deleteButtonId.btn.btn-primary-white(type='submit', value='Create', style='margin-top: 20px;\
+      border: 2px solid grey;', name='deleteButton')
+        | Delete
+    // Add to your stylesheet
+    script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1', crossorigin='anonymous')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM', crossorigin='anonymous')
