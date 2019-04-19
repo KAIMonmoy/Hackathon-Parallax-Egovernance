@@ -19,9 +19,20 @@ router.get("/:username", async (req, res) => {
   const username = req.params.username;
   console.log(username);
 
-  res.render("userHotels");
+  res.render("userHotels", {
+    username: username
+  });
 });
 
-router.post("/", async (req, res) => {});
+router.post("/:username", async (req, res) => {
+  const username = req.params.username;
+  console.log(username);
+
+  console.log(req.body);
+
+  res.render("userHotels", {
+    username: username
+  });
+});
 
 module.exports = router;

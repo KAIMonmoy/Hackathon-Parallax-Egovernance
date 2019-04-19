@@ -26,18 +26,17 @@ router.post("/", async (req, res) => {
     email: req.body.email,
     password: req.body.password
   };
-  const { error } = validateLogin(loginData);
-  if (error)
-    return res.status(400).render("agencyLogin", {
-      failedLogin: true
-    });
+
+  console.log(loginData);
 
   try {
-    const sql = `SELECT * FROM "agency" WHERE "email" = $1`;
+    const sql = `SELECT * FROM "agency" WHERE "agency_email" = $1`;
     const param = [loginData.email];
     const client = new Client();
     await client.connect();
-    const loggedInAgency = await client.query(sql, param);
+    let loggedInAgency = await client.query(sql, param);
+    console.log(loggedInAgency.rows);
+
     if (loggedInAgency.rowCount != 1) {
       return res.status(400).render("agencyLogin", {
         failedLogin: true
@@ -46,7 +45,7 @@ router.post("/", async (req, res) => {
     loggedInAgency = loggedInAgency.rows[0];
     const validPassword = await bcrypt.compare(
       loginData.password,
-      loggedInAgency.password
+      loggedInAgency.agency_password
     );
     if (!validPassword)
       return res.status(400).render("agencyLogin", {
@@ -55,9 +54,10 @@ router.post("/", async (req, res) => {
 
     const token = tokenForUser(loggedInAgency);
 
-    res.header("x-auth-token", token).render("user", {
-      username: loggedInAgency.username,
-      email: loggedInAgency.email
+    res.header("x-auth-token", token).render("agency", {
+      agency_name: loggedInAgency.agency_name,
+      agency_description: loggedInAgency.agency_description,
+      agency_email: loggedInAgency.agency_email
     });
   } catch (ex) {
     console.error(ex);

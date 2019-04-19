@@ -152,13 +152,13 @@ html(lang='en', dir='ltr')
                   li.text-center
                     img.img-circle.img-responsive.img-bordered-primary(data-no-retina='', src='http://bootdey.com/img/Content/avatar/avatar1.png', alt='John Doe')
                   li.text-center
-                    h4.text-capitalize Event Planner
+                    h4.text-capitalize #{agency_name}
                     // <p class="text-muted text-capitalize">web designer</p>
                   li
                     br
                   li
                     .btn-group-vertical.btn-block
-                      a.btn.btn-success.text-center.btn-block(href='index.html') Log Out
+                      a.btn.btn-success.text-center.btn-block(href='/agency/login') Log Out
           // /.panel
         .col-lg-9.col-md-9.col-sm-8
           .profile-cover
@@ -195,15 +195,9 @@ html(lang='en', dir='ltr')
               <a href="#" style="color:black"> <i class="fas fa-angle-double-right" style="font-size:100px;"></i></a>
               </div>
               <div class="col-md-4">
-            h3 Description
+            h3 Address
             p
-              | leusfasdjifhjsdlvjksdvjhk
-              br
-              |                         leusfasdjifhjsdlvjksdvjhk
-              br
-              |                         leusfasdjifhjsdlvjksdvjhk
-              br
-              |                         leusfasdjifhjsdlvjksdvjhk
+              | #{agency_description}
               br
             //
               </div>
