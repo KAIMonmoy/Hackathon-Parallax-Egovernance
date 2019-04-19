@@ -77,7 +77,7 @@ router.post("/", async (req, res) => {
     await client.connect();
     const existingUsersWithGivenEmail = await client.query(sql, param);
     if (existingUsersWithGivenEmail.rowCount > 0) {
-      return res.status(403).send("Request Denied!");
+      return res.status(403).render("404");
     }
 
     // generating hashed password with salt
@@ -99,12 +99,12 @@ router.post("/", async (req, res) => {
     const insertedUser = await client.query(insertionSQL, params);
     console.log(insertedUser.rowCount, insertedUser.rows);
     const token = tokenForUser(newUser);
-    res.header("x-auth-token", token).send("user", {
+    res.header("x-auth-token", token).render("user", {
       user: newUser
     });
   } catch (err) {
     console.error(err);
-    res.status(500).send("500"); //send appropriate files
+    res.status(500).render("500"); //send appropriate files
   }
 });
 

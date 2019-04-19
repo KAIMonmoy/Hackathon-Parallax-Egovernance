@@ -51,7 +51,7 @@ router.post("/", async (req, res) => {
     rating: req.body.rating
   };
 
-  const sql = `select * from "agency" where "agency"."email" = $1`;
+  const sql = `select * from "agency" where "agency"."agency_email" = $1`;
   const param = [newAgency.email];
   // looking for existing agency with email then inserting new user
   try {
@@ -68,15 +68,14 @@ router.post("/", async (req, res) => {
 
     // insert new user data into database
     const insertionSQL = `INSERT INTO "agency"(
-        "agency_name", "agency_password", "agency_email", "agency_description", "agency_specialfeatures", "agency_rating")
-        VALUES ($1, $2, $3, $4, $5, $6)`;
+        "agency_name", "agency_password", "agency_email", "agency_description", "agency_specialfeatures")
+        VALUES ($1, $2, $3, $4, $5)`;
     const params = [
       newAgency.agencyName,
       newAgency.password,
       newAgency.email,
       newAgency.description,
-      newAgency.specialFeatures,
-      newAgency.rating
+      newAgency.specialFeatures
     ];
     const insertedAgency = await client.query(insertionSQL, params);
     console.log(insertedAgency.rowCount, insertedAgency.rows);
