@@ -31,7 +31,7 @@ app.use("/agency/signup", agencySignup);
 
 // handling home page
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("index")
 });
 
 // starting server
