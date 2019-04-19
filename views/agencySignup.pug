@@ -1,0 +1,74 @@
+doctype html
+html(lang='en', dir='ltr')
+  head
+    meta(charset='utf-8')
+    title
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+    link(rel='stylesheet', href='signup.css')
+    link(href='https://fonts.googleapis.com/css?family=Cabin:400,700|Mukta:200|Roboto:300', rel='stylesheet')
+  body
+    .container
+      .heading
+        h1 Beautiful Bangladesh
+        hr.my-2
+        p A full guide for tourists...
+      .jumbotron
+        .row
+          .col-lg-6.col-sm-6
+            form(action='/agency/signup', method='post')
+              .form-row
+                .col-md-6.mb-3
+                  label(for='validationDefault01') Agency Name
+                  input#validationDefault01.form-control(type='text', placeholder='Agency name', name='agencyName', required='')
+                .col-md-6.mb-3
+                  label(for='validationDefault02') Email
+                  input#validationDefault02.form-control(type='email', placeholder='Email', name='email', required='')
+              .form-row
+                .col-md-6.mb-3
+                  label(for='validationDefault03') Password
+                  input#validationDefault03.form-control(type='password', placeholder='Password', name='password', required='')
+                .col-md-6.mb-3
+                  label(for='validationDefault03') Description
+                  input#validationDefault03.form-control(type='text', placeholder='DD-MM-YYYY', name='description', required='')
+              .form-row
+                .col-md-8.mb-3
+                  label(for='validationDefault03') Special Features
+                  input#validationDefault03.form-control(type='text', name='specialFeatures', placeholder='Address')
+                //- .col-md-4.mb-3
+                //-   label(for='validationDefault03') Contact No
+                //-   input#validationDefault03.form-control(type='text', name='contact', placeholder='Contact No.')
+              .form-group
+                .form-check
+                  input#invalidCheck2.form-check-input(type='checkbox', value='', name='formCheck', required='')
+                  label.form-check-label(for='invalidCheck2')
+                    | Agree to terms and conditions
+              button.btn.btn-primary(type='submit') Sign Up
+              br
+              br
+              a(href='home.html', style='font-size:.75em')
+                | Already Have an account,Login Here!
+          a(href='home.html', style='font-size:.75em')
+          .col-lg-6.col-sm-6
+            a(href='home.html', style='font-size:.75em')
+            #carouselExampleIndicators.carousel.slide(data-ride='carousel')
+              a(href='home.html', style='font-size:.75em')
+                ol.carousel-indicators
+                  li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
+                  li(data-target='#carouselExampleIndicators', data-slide-to='1')
+                  li(data-target='#carouselExampleIndicators', data-slide-to='2')
+                .carousel-inner.slider
+                  .carousel-item.active
+                    img.d-block.w-100.rounded(src='https://steemitimages.com/DQmPWSqTRYk1RGNmJTSXUCuvTRYKbHhxtSX53PNMGcwbHFi/image.png', alt='First slide')
+                  .carousel-item
+                    img.d-block.w-100.rounded(src='https://darshantravels.net/wp-content/uploads/2018/08/BANGLADESH.jpg', alt='Second slide')
+                  .carousel-item
+                    img.d-block.w-100.rounded(src='http://www.travelindream.com/wp-content/uploads/2016/04/pexels-photo-122107-750x422.jpg', alt='Third slide')
+              a.carousel-control-prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
+                span.carousel-control-prev-icon(aria-hidden='true')
+                span.sr-only Previous
+              a.carousel-control-next(href='#carouselExampleIndicators', role='button', data-slide='next')
+                span.carousel-control-next-icon(aria-hidden='true')
+                span.sr-only Next
+    script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1', crossorigin='anonymous')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM', crossorigin='anonymous')
