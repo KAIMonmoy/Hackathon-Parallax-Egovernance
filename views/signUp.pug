@@ -19,27 +19,27 @@ html(lang='en', dir='ltr')
               .form-row
                 .col-md-6.mb-3
                   label(for='validationDefault01') User name
-                  input#validationDefault01.form-control(type='text', placeholder='User name', required='')
+                  input#validationDefault01.form-control(type='text', placeholder='User name', name='userName', required='')
                 .col-md-6.mb-3
                   label(for='validationDefault02') Email
-                  input#validationDefault02.form-control(type='email', placeholder='Email', required='')
+                  input#validationDefault02.form-control(type='email', placeholder='Email', name='email', required='')
               .form-row
                 .col-md-6.mb-3
                   label(for='validationDefault03') Password
-                  input#validationDefault03.form-control(type='password', placeholder='Password', required='')
+                  input#validationDefault03.form-control(type='password', placeholder='Password', name='password', required='')
                 .col-md-6.mb-3
                   label(for='validationDefault03') Date Of Birth
-                  input#validationDefault03.form-control(type='date', placeholder='DD-MM-YYYY', required='')
+                  input#validationDefault03.form-control(type='date', placeholder='DD-MM-YYYY', name='dateOfBirth', required='')
               .form-row
                 .col-md-8.mb-3
                   label(for='validationDefault03') Address
-                  input#validationDefault03.form-control(type='text', placeholder='Address')
+                  input#validationDefault03.form-control(type='text', name='address', placeholder='Address')
                 .col-md-4.mb-3
                   label(for='validationDefault03') Contact No
-                  input#validationDefault03.form-control(type='text', placeholder='Contact No.')
+                  input#validationDefault03.form-control(type='text', name='contactNo', placeholder='Contact No.')
               .form-group
                 .form-check
-                  input#invalidCheck2.form-check-input(type='checkbox', value='', required='')
+                  input#invalidCheck2.form-check-input(type='checkbox', value='', name='formCheck', required='')
                   label.form-check-label(for='invalidCheck2')
                     | Agree to terms and conditions
               button.btn.btn-primary(type='submit') Sign Up
