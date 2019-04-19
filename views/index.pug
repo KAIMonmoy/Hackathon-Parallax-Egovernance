@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 doctype html
 html(lang='en')
   head
@@ -19,7 +18,7 @@ html(lang='en')
       .pick{
       display: flex;
       flex-flow: column wrap;
-      justify-content: center;
+      justify-content: flex-end;
       align-content: center;
       align-items: center;
       }
@@ -31,30 +30,6 @@ html(lang='en')
           span(style='color: white')   Beautiful Bangladesh
         button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
           span.navbar-toggler-icon
-        //
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-          <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-          </li>
-          </ul>
-          <ul class="navbar-nav navbar-right">
-          <li><a class="nav-link" href="#loginform">Login <span class="sr-only">(current)</span></a></li>
-          <li><a class="nav-link" href="signup.html">SignUp <span class="sr-only">(current)</span></a></li>
-          </ul>
-          </div>
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
     br
     br
     br
@@ -62,23 +37,14 @@ html(lang='en')
       .col
         div(style='margin:10px;border:5px solid white;height: 45px;width: 300px;align-content: center;cursor:pointer;')
           form(method='GET', action='user/login')
-            i.fas.fa-users(style='color:white;font-size: 30px;') Users
+            button(type='submit')
+              i.fas.fa-users(style='color:white;font-size: 30px;') Users
       .col
         div(style='margin:10px;border:5px solid white;height: 45px;width: 300px;align-content: center;cursor:pointer;')
           form(method='GET', action='agency/login')
-            i.fas.fa-handshake(style='color:white;font-size:30px;') Agencies
+            button(type='submit')
+              i.fas.fa-handshake(style='color:white;font-size:30px;') Agencies
     // Add to your stylesheet
     script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1', crossorigin='anonymous')
     script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM', crossorigin='anonymous')
-=======
-<!DOCTYPE html>
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        title Beautiful Bangladesh
-    body
-        h1 Hello Alien!!! 
->>>>>>> 9e100cda111d31dfcda3dda7b0f82033166ce954
