@@ -203,27 +203,27 @@ html(lang='en')
                 ul.navbar-nav.navbar-right(style='margin-right: 100px;')
                     li
                         .nav-item.nav-link.nav-icons
-                            i.fas.fa-hotel(style='color: white;opacity: 0.6;font-size: 17px;')  hotels
+                            i.fas.fa-hotel(style='color: white;opacity: 0.6;font-size: 17px;')  
+                                a(href='/user/hotels/'+username)
+                                    b(style='color: grey;') hotels
                     li
                         .nav-item.nav-link.nav-icons
                             i.fas.fa-bus-alt(style='color:white;opacity: 0.6;font-size: 17px;')
-                                a(href='/user/transportations')
+                                a(href='/user/transportations/'+username)
                                     b(style='color: grey;') transportations 
                     li
                         .nav-item.nav-link.nav-icons
                             i.fas.fa-utensils(style='color:white;opacity: 0.6;font-size: 17px;')
-                                a(href='/user/restaurants')
+                                a(href='/user/restaurants/'+username)
                                     b(style='color: grey;')  restaurants
                     li
                         .nav-item.nav-link.nav-icons
                             i.fas.fa-clipboard-list(style='color:white;opacity: 0.6;font-size: 17px;')
-                                a(href='/user/thingsToDo')
+                                a(href='/user/thingsToDo/'+username)
                                     b(style='color: grey;') things to do
                     li
                         .nav-item.nav-link.nav-icons
-                            i.fas.fa-bed(style='color: white;opacity: 0.6;font-size: 17px;')
-                                a(href='/user/payingGuest')
-                                    b(style='color: grey;')  pg
+                            i.fas.fa-bed(style='color: white;opacity: 0.6;font-size: 17px;') pg
         br
         .container
             form(action='/user/payingGuests/' + username, method='POST')
