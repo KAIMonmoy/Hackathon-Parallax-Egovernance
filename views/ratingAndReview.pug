@@ -144,61 +144,64 @@ html(lang='en', dir='ltr')
       }
   body
     h1 Place Review And Rating
-    form(action='/user', method='get')
+    form(action='/user/ratings/'+username+'/place', method='post')
       select(name='placeReview')
-        option(value='') place
+        each pl in places
+          option(value=`"` + pl.place_name + `"`) #{pl.place_name}
       div
         // <label>Rate the Content.</label>
         .box
-          input.angry(type='radio', name='emoji')
+          input.angry(type='radio', name='1')
           a.hidden Worst
-          input.okok(type='radio', name='emoji')
+          input.okok(type='radio', name='2')
           a.hidden  Bad
-          input.good(type='radio', name='emoji')
+          input.good(type='radio', name='3')
           a.hidden Good
-          input.better(type='radio', name='emoji')
+          input.better(type='radio', name='4')
           a.hidden Better
-          input.awesome(type='radio', name='emoji')
+          input.awesome(type='radio', name='5')
           a.hidden Awesome
       input(type='textarea', name='placeReview', value='')
       button(type='submit', name='submitRating') Submit
     br
     h1 Hotel Review And Rating
-    form(action='/user', method='get')
+    form(action='/user/ratings/'+username+'/hotel', method='post')
       select(name='hotelReview')
-        option(value='') Hotel
+        each pl in hotels
+          option(value=`"` + pl.hotel_name + `"`) #{pl.hotel_name}
       div(style='')
         // <label>Rate the Content.</label>
         .box
-          input.angry(type='radio', name='emoji')
+          input.angry(type='radio', name='1')
           a.hidden Worst
-          input.okok(type='radio', name='emoji')
+          input.okok(type='radio', name='2')
           a.hidden  Bad
-          input.good(type='radio', name='emoji')
+          input.good(type='radio', name='3')
           a.hidden Good
-          input.better(type='radio', name='emoji')
+          input.better(type='radio', name='4')
           a.hidden Better
-          input.awesome(type='radio', name='emoji')
+          input.awesome(type='radio', name='5')
           a.hidden Awesome
       input(type='textarea', name='hotelReview', value='', style='width:400px')
       button(type='submit', name='submitRating') Submit
     br
     h1 Agency Review And Rating
-    form(action='/user', method='get')
-      select(name='AgencyReview')
-        option(value='') Agency
+    form(action='/user/ratings/'+username+'/agency', method='post')
+      select(name='agencyReview')
+        each pl in agencies
+          option(value=`"` + pl.agency_name + `"`) #{pl.agency_name}
       div
         // <label>Rate the Content.</label>
         .box
-          input.angry(type='radio', name='emoji')
+          input.angry(type='radio', name='1')
           a.hidden Worst
-          input.okok(type='radio', name='emoji')
+          input.okok(type='radio', name='2')
           a.hidden  Bad
-          input.good(type='radio', name='emoji')
+          input.good(type='radio', name='3')
           a.hidden Good
-          input.better(type='radio', name='emoji')
+          input.better(type='radio', name='4')
           a.hidden Better
-          input.awesome(type='radio', name='emoji')
+          input.awesome(type='radio', name='5')
           a.hidden Awesome
       input(type='textarea', name='agencyReview', value='')
       button(type='submit', name='submitRating') Submit
