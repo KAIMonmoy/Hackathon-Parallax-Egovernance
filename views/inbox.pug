@@ -1,0 +1,75 @@
+doctype html
+html(lang='en', dir='ltr')
+  head
+    meta(charset='utf-8')
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans:400,700', rel='stylesheet')
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.1/css/all.css', integrity='sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf', crossorigin='anonymous')
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.1/css/all.css', integrity='sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf', crossorigin='anonymous')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+    title Beautiful Bangladesh
+  body
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    style.
+      body {
+      margin: 0 auto;
+      max-width: 800px;
+      padding: 0 20px;
+      background-image: url("https://i.pinimg.com/originals/4d/ee/65/4dee65d05bdbe09c669afcecc9fd8b20.jpg");
+      }
+      .container {
+      border: 2px solid #dedede;
+      background-color: #f1f1f1;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 10px 0;
+      }
+      .darker {
+      border-color: #ccc;
+      background-color: #ddd;
+      }
+      .container::after {
+      content: "";
+      clear: both;
+      display: table;
+      }
+      .container img {
+      float: left;
+      max-width: 60px;
+      width: 100%;
+      margin-right: 20px;
+      border-radius: 50%;
+      }
+      .container img.right {
+      float: right;
+      margin-left: 20px;
+      margin-right:0;
+      }
+      .time-right {
+      float: right;
+      color: #aaa;
+      }
+      .time-left {
+      float: left;
+      color: #999;
+      }
+    .row.d-flex.justify-content-around(style='font-size:30px')
+      .col-md-6
+        b  Messages
+      .col-md-1
+        a(href='\user')
+          i.fas.fa-home
+    h2(align='center') Friends List
+    .jumbotron(style='width:60%; position:relative; left:15%')
+      .container
+        ul
+          li
+            a(href='\user\chatbox') FRIENDS_NAME_HERE
+    h2(align='center') Agency List
+    .jumbotron(style='width:60%; position:relative; left:15%')
+      .container
+        ul
+          li
+            a(href='\user\chatbox') AGENCY_NAME_HERE
