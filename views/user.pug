@@ -200,23 +200,23 @@ html(lang='en', dir='ltr')
                 img.img-responsive.full-width(src='https://i.pinimg.com/originals/58/bf/b4/58bfb4ecf2ec433b7900fe8c3b72bdac.jpg', alt='cover', style='max-height:200px;')
               ul.list-unstyled.no-padding.hidden-sm.hidden-xs.cover-menu
                 li.active
-                  a(href='/user/inbox')
+                  a(href='/user/inbox/'+username)
                     i.fas.fa-inbox
                     span Inbox
                 li
-                  a(href='/user/wishList')
+                  a(href='/user/wishList/'+username)
                     i.fas.fa-clipboard-check
                     span WishList
                 li
-                  a(href='/user/friends')
+                  a(href='/user/friends/'+username)
                     i.fas.fa-user-friends
                     span Friends
                 li
-                  a(href='/user/groups')
+                  a(href='/user/groups/'+username)
                     i.fa.fa-fw.fa-users
                     span Groups 
                 li
-                  a(href='/user/calendar')
+                  a(href='/user/calendar/'+username)
                     i.far.fa-calendar-alt
                     span Calendar 
             // /.cover

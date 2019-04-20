@@ -59,17 +59,21 @@ html(lang='en', dir='ltr')
       .col-md-6
         b  Messages
       .col-md-1
-        a(href='\user')
+        a(href='/user/'+username)
           i.fas.fa-home
     h2(align='center') Friends List
     .jumbotron(style='width:60%; position:relative; left:15%')
       .container
         ul
-          li
-            a(href='\user\chatbox') FRIENDS_NAME_HERE
+          if friends
+            each friend in friends
+              li
+                a(href='/user/chatbox/'+username+'/'+friend.username) #{friend.username}
     h2(align='center') Agency List
     .jumbotron(style='width:60%; position:relative; left:15%')
       .container
         ul
-          li
-            a(href='\user\chatbox') AGENCY_NAME_HERE
+          if agencies
+            each agency in agencies
+              li
+                a(href='/user/chatbox/'+username+'/'+agency.agency_name) #{agency.agency_name}

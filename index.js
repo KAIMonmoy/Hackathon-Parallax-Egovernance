@@ -28,6 +28,8 @@ const userPlaces = require("./routes/userPlaces");
 const userThingsToDo = require("./routes/userThingsToDo");
 const userPayingGuest = require("./routes/userPayingGuest");
 const userRating = require("./routes/userRatings");
+const userInbox = require("./routes/userInbox");
+const userChatbox = require("./routes/userChatbox");
 
 // handling routes
 app.use("/user/login", userLogin);
@@ -40,6 +42,8 @@ app.use("/user/places", userPlaces);
 app.use("/user/thingsToDo", userThingsToDo);
 app.use("/user/payingGuests", userPayingGuest);
 app.use("/user/ratings/", userRating);
+app.use("/user/inbox", userInbox);
+app.use("/user/chatbox", userChatbox);
 
 // handling home page
 app.get("/", (req, res) => {
