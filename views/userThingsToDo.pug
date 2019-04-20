@@ -288,42 +288,40 @@ html(lang='en', dir='ltr')
       color: blue;
       }
   body
-<<<<<<< HEAD
-    .headline 
-      h1 #{placename}
-=======
     br
     br
     // <div class="select" style="position:relative;top:23%;left:15%">
-    .container
-      .row.d-flex.justify-content-center
-        .col-md-4
-          .select
-            select(name='place')
-              option(value='Place') Place
-              option(value='Bandarban District') Bandarban District
-              option(value='Rangamati') Rangamati
-              option(value='Khagrachari District') Khagrachari District
-              option(value='Patenga beach') Patenga beach
-              option(value='Foys Lake') Foy's Lake
-              option(value='Heritage Park') Heritage Park
-              option(value='Bichnakandi') Bichnakandi
-              option(value='Jaflong') Jaflong
-              option(value='Madhobpur Lake') Madhobpur Lake
-              option(value='Ratargul Swamp Forest') Ratargul Swamp Forest
-              option(value='Lalbagh Fort') Lalbagh Fort
-              option(value='Ahsan Manzil') Ahsan Manzil
-              option(value='Somapura Mahavihara') Somapura Mahavihara
-              option(value='Mahastangar') Mahastangar
-              option(value='Kantajew Temple') Kantajew Temple
-              option(value='Kuakata Beach') Kuakata Beach
-              option(value='Cox Bazar') Cox's Bazar
-              option(value='St. Martin Island') St. Martin Island
-        .cl-md-4
-          button(type='submit', name='button') Search
+    
+    form(action="/user/thingsToDo/" + username, method="post")
+      .container
+        .row.d-flex.justify-content-center
+          .col-md-4
+            .select
+              select(name='place')
+                option(value='Place') Place
+                option(value='Bandarban District') Bandarban District
+                option(value='Rangamati') Rangamati
+                option(value='Khagrachari District') Khagrachari District
+                option(value='Patenga beach') Patenga beach
+                option(value='Foys Lake') Foy's Lake
+                option(value='Heritage Park') Heritage Park
+                option(value='Bichnakandi') Bichnakandi
+                option(value='Jaflong') Jaflong
+                option(value='Madhobpur Lake') Madhobpur Lake
+                option(value='Ratargul Swamp Forest') Ratargul Swamp Forest
+                option(value='Lalbagh Fort') Lalbagh Fort
+                option(value='Ahsan Manzil') Ahsan Manzil
+                option(value='Somapura Mahavihara') Somapura Mahavihara
+                option(value='Mahastangar') Mahastangar
+                option(value='Kantajew Temple') Kantajew Temple
+                option(value='Kuakata Beach') Kuakata Beach
+                option(value='Cox Bazar') Cox's Bazar
+                option(value='St. Martin Island') St. Martin Island
+          .cl-md-4
+            button(type='submit', name='button', class='btn btn-lg') Search
     .headline
-      h1 placeName
->>>>>>> 0963ed279c32a87c9bb9559adc25cce058b1945e
+    if place_name
+      h1 #{place_name}
     //
       <div class="wrap">
       <div class="box box1 shadow1">
@@ -341,6 +339,7 @@ html(lang='en', dir='ltr')
     .container(style='margin-left:08%; margin-top:10% ')
       .jumbotron
         .a(style=' top:200px')
+        if todo_task
           p #{todo_task}
     //
       <div class="box box6 shadow6">

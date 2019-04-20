@@ -32,7 +32,7 @@ router.post("/:username", async (req, res) => {
   const sql = `SELECT * FROM public.pg WHERE pg_place_id = (
     SELECT place_id
     FROM public.places
-    WHERE place_name = ${req.body.place})`;
+    WHERE place_name = '${req.body.place}')`;
 
   try {
     let client = new Client();

@@ -252,12 +252,13 @@ html
       .row.d-flex.justify-content-center
         .col-md-6
           .card(style='width: 40rem;height: 30rem;')
-            - var img = place.place_image
-            //img(src=img)
-            img.card-img-top(src=img, alt='...')
-            .card-body
-              p.card-text
-                | #{place.place_description}
+            if place
+              - var img = place.place_image
+              //img(src=img)
+              img.card-img-top(src=img, alt='...')
+              .card-body
+                p.card-text
+                  | #{place.place_description}
 
         
     // Add to your stylesheet

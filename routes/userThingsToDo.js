@@ -27,20 +27,25 @@ router.get("/:username", async (req, res) => {
 router.post("/:username", async (req, res) => {
   let username = req.params.username;
 
-  const sql = ``;
+  const sql = `select P.place_name, T.todo_task
+  from public.things_to_do T join public.places P
+  on P.place_id = T.todo_place_id and P.place_name = '${req.body.place}'
+  `;
+
+  console.log(req.body);
 
   try {
     let client = new Client();
     await client.connect();
-    resturs = await client.query(sql, params);
-    res.render("userRestaurants", {
+    result = await client.query(sql);
+    res.render("userThingsToDo", {
       username: username,
-      restaurants: resturs.rows,
-      count: resturs.rowcount
+      place_name: result.rows[0].place_name,
+      todo_task: result.rows[0].todo_task
     });
   } catch (ex) {
     console.error(ex);
-    req.status(500).render("500");
+    res.status(500).render("500");
   }
 });
 
